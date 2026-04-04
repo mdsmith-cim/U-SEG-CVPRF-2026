@@ -79,4 +79,4 @@ If you make use of any code, data or results, please cite as follows:
     year      = {2026}
 }
 ```
-
+You may also want to [cite the original Mask2Former paper](https://github.com/facebookresearch/mask2former) if appropriate.
