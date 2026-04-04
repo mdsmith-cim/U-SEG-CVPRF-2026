@@ -1,0 +1,691 @@
+Dataset,Backbone,MC Samples,# of Frames,TTA Transforms,Seed,OOD Detection Rate,OOD AUROC
+Cityscapes OOD,DINOv2 (ViT-B),0,0,(),1,0.694,0.618722
+Cityscapes OOD,DINOv2 (ViT-B),0,0,"('horizontalFlip',)",1,0.734,0.6390480000000001
+Cityscapes OOD,DINOv2 (ViT-B),0,0,"('horizontalFlip',)",2,0.734,0.6390480000000001
+Cityscapes OOD,DINOv2 (ViT-B),0,0,"('horizontalFlip',)",3,0.734,0.6390480000000001
+Cityscapes OOD,DINOv2 (ViT-B),0,0,"('horizontalFlip', 'scale')",1,0.826,0.6724439999999999
+Cityscapes OOD,DINOv2 (ViT-B),0,0,"('horizontalFlip', 'scale')",2,0.826,0.6724439999999999
+Cityscapes OOD,DINOv2 (ViT-B),0,0,"('horizontalFlip', 'scale')",3,0.826,0.6724439999999999
+Cityscapes OOD,DINOv2 (ViT-B),0,0,"('scale',)",1,0.814,0.6888519999999999
+Cityscapes OOD,DINOv2 (ViT-B),0,0,"('scale',)",2,0.814,0.6888519999999999
+Cityscapes OOD,DINOv2 (ViT-B),0,0,"('scale',)",3,0.814,0.6888519999999999
+Cityscapes OOD,DINOv2 (ViT-B),0,1,(),1,0.962,0.861292
+Cityscapes OOD,DINOv2 (ViT-B),0,1,(),2,0.962,0.861292
+Cityscapes OOD,DINOv2 (ViT-B),0,1,(),3,0.962,0.861292
+Cityscapes OOD,DINOv2 (ViT-B),0,1,"('horizontalFlip',)",1,0.942,0.772044
+Cityscapes OOD,DINOv2 (ViT-B),0,1,"('horizontalFlip',)",2,0.942,0.772044
+Cityscapes OOD,DINOv2 (ViT-B),0,1,"('horizontalFlip',)",3,0.942,0.772044
+Cityscapes OOD,DINOv2 (ViT-B),0,1,"('horizontalFlip', 'scale')",1,0.942,0.7271679999999999
+Cityscapes OOD,DINOv2 (ViT-B),0,1,"('horizontalFlip', 'scale')",2,0.942,0.7271679999999999
+Cityscapes OOD,DINOv2 (ViT-B),0,1,"('horizontalFlip', 'scale')",3,0.942,0.7271679999999999
+Cityscapes OOD,DINOv2 (ViT-B),0,1,"('scale',)",1,0.944,0.7625959999999999
+Cityscapes OOD,DINOv2 (ViT-B),0,1,"('scale',)",2,0.944,0.7625959999999999
+Cityscapes OOD,DINOv2 (ViT-B),0,1,"('scale',)",3,0.944,0.7625959999999999
+Cityscapes OOD,DINOv2 (ViT-B),0,2,(),1,0.962,0.804712
+Cityscapes OOD,DINOv2 (ViT-B),0,2,(),2,0.962,0.804712
+Cityscapes OOD,DINOv2 (ViT-B),0,2,(),3,0.962,0.804712
+Cityscapes OOD,DINOv2 (ViT-B),0,2,"('horizontalFlip',)",1,0.938,0.7358480000000001
+Cityscapes OOD,DINOv2 (ViT-B),0,2,"('horizontalFlip',)",2,0.938,0.7358480000000001
+Cityscapes OOD,DINOv2 (ViT-B),0,2,"('horizontalFlip',)",3,0.938,0.7358480000000001
+Cityscapes OOD,DINOv2 (ViT-B),0,2,"('horizontalFlip', 'scale')",1,0.952,0.70248
+Cityscapes OOD,DINOv2 (ViT-B),0,2,"('horizontalFlip', 'scale')",2,0.952,0.70248
+Cityscapes OOD,DINOv2 (ViT-B),0,2,"('horizontalFlip', 'scale')",3,0.952,0.70248
+Cityscapes OOD,DINOv2 (ViT-B),0,2,"('scale',)",1,0.95,0.7369400000000002
+Cityscapes OOD,DINOv2 (ViT-B),0,2,"('scale',)",2,0.95,0.7369400000000002
+Cityscapes OOD,DINOv2 (ViT-B),0,2,"('scale',)",3,0.95,0.7369400000000002
+Cityscapes OOD,DINOv2 (ViT-B),0,3,(),1,0.972,0.7699199999999999
+Cityscapes OOD,DINOv2 (ViT-B),0,3,(),2,0.972,0.7699199999999999
+Cityscapes OOD,DINOv2 (ViT-B),0,3,(),3,0.972,0.7699199999999999
+Cityscapes OOD,DINOv2 (ViT-B),0,3,"('horizontalFlip',)",1,0.936,0.710548
+Cityscapes OOD,DINOv2 (ViT-B),0,3,"('horizontalFlip',)",2,0.936,0.710548
+Cityscapes OOD,DINOv2 (ViT-B),0,3,"('horizontalFlip',)",3,0.936,0.710548
+Cityscapes OOD,DINOv2 (ViT-B),0,3,"('scale',)",1,0.956,0.711876
+Cityscapes OOD,DINOv2 (ViT-B),0,3,"('scale',)",2,0.956,0.711876
+Cityscapes OOD,DINOv2 (ViT-B),0,3,"('scale',)",3,0.956,0.711876
+Cityscapes OOD,DINOv2 (ViT-B),0,5,(),1,0.978,0.712688
+Cityscapes OOD,DINOv2 (ViT-B),0,5,(),2,0.978,0.712688
+Cityscapes OOD,DINOv2 (ViT-B),0,5,(),3,0.978,0.712688
+Cityscapes OOD,DINOv2 (ViT-B),0,5,"('horizontalFlip',)",1,0.932,0.66936
+Cityscapes OOD,DINOv2 (ViT-B),0,5,"('horizontalFlip',)",2,0.932,0.66936
+Cityscapes OOD,DINOv2 (ViT-B),0,5,"('horizontalFlip',)",3,0.932,0.66936
+Cityscapes OOD,DINOv2 (ViT-B),0,5,"('scale',)",1,0.946,0.674072
+Cityscapes OOD,DINOv2 (ViT-B),0,5,"('scale',)",2,0.946,0.674072
+Cityscapes OOD,DINOv2 (ViT-B),0,5,"('scale',)",3,0.946,0.674072
+Cityscapes OOD,DINOv2 (ViT-B),3,0,(),1,0.78,0.640328
+Cityscapes OOD,DINOv2 (ViT-B),3,0,(),2,0.728,0.628072
+Cityscapes OOD,DINOv2 (ViT-B),3,0,(),3,0.748,0.63038
+Cityscapes OOD,DINOv2 (ViT-B),3,0,"('horizontalFlip',)",1,0.796,0.645776
+Cityscapes OOD,DINOv2 (ViT-B),3,0,"('horizontalFlip',)",2,0.788,0.64166
+Cityscapes OOD,DINOv2 (ViT-B),3,0,"('horizontalFlip',)",3,0.804,0.64598
+Cityscapes OOD,DINOv2 (ViT-B),3,0,"('horizontalFlip', 'scale')",1,0.868,0.657736
+Cityscapes OOD,DINOv2 (ViT-B),3,0,"('horizontalFlip', 'scale')",2,0.86,0.656248
+Cityscapes OOD,DINOv2 (ViT-B),3,0,"('horizontalFlip', 'scale')",3,0.866,0.655252
+Cityscapes OOD,DINOv2 (ViT-B),3,0,"('scale',)",1,0.852,0.672096
+Cityscapes OOD,DINOv2 (ViT-B),3,0,"('scale',)",2,0.85,0.672268
+Cityscapes OOD,DINOv2 (ViT-B),3,0,"('scale',)",3,0.87,0.673948
+Cityscapes OOD,DINOv2 (ViT-B),3,1,(),1,0.896,0.74108
+Cityscapes OOD,DINOv2 (ViT-B),3,1,(),2,0.88,0.7285039999999999
+Cityscapes OOD,DINOv2 (ViT-B),3,1,(),3,0.906,0.741436
+Cityscapes OOD,DINOv2 (ViT-B),3,1,"('horizontalFlip',)",1,0.894,0.7069880000000002
+Cityscapes OOD,DINOv2 (ViT-B),3,1,"('horizontalFlip',)",2,0.906,0.7037439999999999
+Cityscapes OOD,DINOv2 (ViT-B),3,1,"('horizontalFlip',)",3,0.898,0.7066759999999999
+Cityscapes OOD,DINOv2 (ViT-B),3,1,"('scale',)",1,0.938,0.7070759999999999
+Cityscapes OOD,DINOv2 (ViT-B),3,1,"('scale',)",2,0.942,0.711524
+Cityscapes OOD,DINOv2 (ViT-B),3,1,"('scale',)",3,0.93,0.7033280000000001
+Cityscapes OOD,DINOv2 (ViT-B),3,2,(),1,0.894,0.710068
+Cityscapes OOD,DINOv2 (ViT-B),3,2,(),2,0.908,0.708628
+Cityscapes OOD,DINOv2 (ViT-B),3,2,(),3,0.9,0.702428
+Cityscapes OOD,DINOv2 (ViT-B),3,2,"('horizontalFlip',)",1,0.896,0.675684
+Cityscapes OOD,DINOv2 (ViT-B),3,2,"('horizontalFlip',)",2,0.902,0.674976
+Cityscapes OOD,DINOv2 (ViT-B),3,2,"('horizontalFlip',)",3,0.912,0.6781320000000001
+Cityscapes OOD,DINOv2 (ViT-B),3,3,(),1,0.884,0.68174
+Cityscapes OOD,DINOv2 (ViT-B),3,3,(),2,0.906,0.6818679999999999
+Cityscapes OOD,DINOv2 (ViT-B),3,3,(),3,0.872,0.6798199999999999
+Cityscapes OOD,DINOv2 (ViT-B),3,5,(),1,0.852,0.639804
+Cityscapes OOD,DINOv2 (ViT-B),3,5,(),2,0.87,0.6394880000000001
+Cityscapes OOD,DINOv2 (ViT-B),3,5,(),3,0.864,0.642164
+Cityscapes OOD,DINOv2 (ViT-B),5,0,(),1,0.756,0.6383320000000001
+Cityscapes OOD,DINOv2 (ViT-B),5,0,(),2,0.744,0.6337480000000001
+Cityscapes OOD,DINOv2 (ViT-B),5,0,(),3,0.78,0.641692
+Cityscapes OOD,DINOv2 (ViT-B),5,0,"('horizontalFlip',)",1,0.812,0.646792
+Cityscapes OOD,DINOv2 (ViT-B),5,0,"('horizontalFlip',)",2,0.802,0.648584
+Cityscapes OOD,DINOv2 (ViT-B),5,0,"('horizontalFlip',)",3,0.796,0.6414920000000001
+Cityscapes OOD,DINOv2 (ViT-B),5,0,"('scale',)",1,0.856,0.664752
+Cityscapes OOD,DINOv2 (ViT-B),5,0,"('scale',)",2,0.876,0.66862
+Cityscapes OOD,DINOv2 (ViT-B),5,0,"('scale',)",3,0.872,0.666376
+Cityscapes OOD,DINOv2 (ViT-B),5,1,(),1,0.914,0.7359600000000001
+Cityscapes OOD,DINOv2 (ViT-B),5,1,(),2,0.916,0.7381679999999999
+Cityscapes OOD,DINOv2 (ViT-B),5,1,(),3,0.916,0.7338719999999999
+Cityscapes OOD,DINOv2 (ViT-B),5,1,"('horizontalFlip',)",1,0.894,0.6993320000000001
+Cityscapes OOD,DINOv2 (ViT-B),5,1,"('horizontalFlip',)",2,0.916,0.704432
+Cityscapes OOD,DINOv2 (ViT-B),5,1,"('horizontalFlip',)",3,0.918,0.7039559999999999
+Cityscapes OOD,DINOv2 (ViT-B),5,2,(),1,0.916,0.707792
+Cityscapes OOD,DINOv2 (ViT-B),5,2,(),2,0.91,0.707172
+Cityscapes OOD,DINOv2 (ViT-B),5,2,(),3,0.91,0.7006479999999999
+Cityscapes OOD,DINOv2 (ViT-B),5,3,(),1,0.898,0.676072
+Cityscapes OOD,DINOv2 (ViT-B),5,3,(),2,0.906,0.680072
+Cityscapes OOD,DINOv2 (ViT-B),5,3,(),3,0.91,0.678132
+Cityscapes OOD,DINOv2 (ViT-B),10,0,(),1,0.778,0.642072
+Cityscapes OOD,DINOv2 (ViT-B),10,0,(),2,0.772,0.6414839999999999
+Cityscapes OOD,DINOv2 (ViT-B),10,0,(),3,0.81,0.638908
+Cityscapes OOD,DINOv2 (ViT-B),10,0,"('horizontalFlip',)",1,0.798,0.64484
+Cityscapes OOD,DINOv2 (ViT-B),10,0,"('horizontalFlip',)",2,0.804,0.6456480000000001
+Cityscapes OOD,DINOv2 (ViT-B),10,0,"('horizontalFlip',)",3,0.792,0.6424479999999999
+Cityscapes OOD,DINOv2 (ViT-B),10,1,(),1,0.906,0.727556
+Cityscapes OOD,DINOv2 (ViT-B),10,1,(),2,0.93,0.7336879999999999
+Cityscapes OOD,DINOv2 (ViT-B),10,1,(),3,0.914,0.72706
+Cityscapes OOD,ResNet50,0,0,(),1,0.94,0.754052
+Cityscapes OOD,ResNet50,0,0,"('horizontalFlip',)",1,0.942,0.7609600000000001
+Cityscapes OOD,ResNet50,0,0,"('horizontalFlip',)",2,0.942,0.7609600000000001
+Cityscapes OOD,ResNet50,0,0,"('horizontalFlip',)",3,0.942,0.7609600000000001
+Cityscapes OOD,ResNet50,0,0,"('horizontalFlip', 'scale')",1,0.92,0.761568
+Cityscapes OOD,ResNet50,0,0,"('horizontalFlip', 'scale')",2,0.92,0.761568
+Cityscapes OOD,ResNet50,0,0,"('horizontalFlip', 'scale')",3,0.92,0.761568
+Cityscapes OOD,ResNet50,0,0,"('scale',)",1,0.91,0.768152
+Cityscapes OOD,ResNet50,0,0,"('scale',)",2,0.91,0.768152
+Cityscapes OOD,ResNet50,0,0,"('scale',)",3,0.91,0.768152
+Cityscapes OOD,ResNet50,0,1,(),1,0.98,0.9125160000000001
+Cityscapes OOD,ResNet50,0,1,(),2,0.98,0.9125160000000001
+Cityscapes OOD,ResNet50,0,1,(),3,0.98,0.9125160000000001
+Cityscapes OOD,ResNet50,0,1,"('horizontalFlip',)",1,0.986,0.874756
+Cityscapes OOD,ResNet50,0,1,"('horizontalFlip',)",2,0.986,0.874756
+Cityscapes OOD,ResNet50,0,1,"('horizontalFlip',)",3,0.986,0.874756
+Cityscapes OOD,ResNet50,0,1,"('horizontalFlip', 'scale')",1,0.968,0.809824
+Cityscapes OOD,ResNet50,0,1,"('horizontalFlip', 'scale')",2,0.968,0.809824
+Cityscapes OOD,ResNet50,0,1,"('horizontalFlip', 'scale')",3,0.968,0.809824
+Cityscapes OOD,ResNet50,0,1,"('scale',)",1,0.98,0.8143119999999999
+Cityscapes OOD,ResNet50,0,1,"('scale',)",2,0.98,0.8143119999999999
+Cityscapes OOD,ResNet50,0,1,"('scale',)",3,0.98,0.8143119999999999
+Cityscapes OOD,ResNet50,0,2,(),1,0.984,0.873584
+Cityscapes OOD,ResNet50,0,2,(),2,0.984,0.873584
+Cityscapes OOD,ResNet50,0,2,(),3,0.984,0.873584
+Cityscapes OOD,ResNet50,0,2,"('horizontalFlip',)",1,0.988,0.8448959999999999
+Cityscapes OOD,ResNet50,0,2,"('horizontalFlip',)",2,0.988,0.8448959999999999
+Cityscapes OOD,ResNet50,0,2,"('horizontalFlip',)",3,0.988,0.8448959999999999
+Cityscapes OOD,ResNet50,0,2,"('horizontalFlip', 'scale')",1,0.978,0.7677560000000001
+Cityscapes OOD,ResNet50,0,2,"('horizontalFlip', 'scale')",2,0.978,0.7677560000000001
+Cityscapes OOD,ResNet50,0,2,"('horizontalFlip', 'scale')",3,0.978,0.7677560000000001
+Cityscapes OOD,ResNet50,0,2,"('scale',)",1,0.988,0.783652
+Cityscapes OOD,ResNet50,0,2,"('scale',)",2,0.988,0.783652
+Cityscapes OOD,ResNet50,0,2,"('scale',)",3,0.988,0.783652
+Cityscapes OOD,ResNet50,0,3,(),1,0.984,0.843312
+Cityscapes OOD,ResNet50,0,3,(),2,0.984,0.843312
+Cityscapes OOD,ResNet50,0,3,(),3,0.984,0.843312
+Cityscapes OOD,ResNet50,0,3,"('horizontalFlip',)",1,0.988,0.8193560000000001
+Cityscapes OOD,ResNet50,0,3,"('horizontalFlip',)",2,0.988,0.8193560000000001
+Cityscapes OOD,ResNet50,0,3,"('horizontalFlip',)",3,0.988,0.8193560000000001
+Cityscapes OOD,ResNet50,0,3,"('scale',)",1,0.988,0.756764
+Cityscapes OOD,ResNet50,0,3,"('scale',)",2,0.988,0.756764
+Cityscapes OOD,ResNet50,0,3,"('scale',)",3,0.988,0.756764
+Cityscapes OOD,ResNet50,0,5,(),1,0.98,0.789028
+Cityscapes OOD,ResNet50,0,5,(),2,0.98,0.789028
+Cityscapes OOD,ResNet50,0,5,(),3,0.98,0.789028
+Cityscapes OOD,ResNet50,0,5,"('horizontalFlip',)",1,0.988,0.7750239999999999
+Cityscapes OOD,ResNet50,0,5,"('horizontalFlip',)",2,0.988,0.7750239999999999
+Cityscapes OOD,ResNet50,0,5,"('horizontalFlip',)",3,0.988,0.7750239999999999
+Cityscapes OOD,ResNet50,0,5,"('scale',)",1,0.984,0.7246840000000001
+Cityscapes OOD,ResNet50,0,5,"('scale',)",2,0.984,0.7246840000000001
+Cityscapes OOD,ResNet50,0,5,"('scale',)",3,0.984,0.7246840000000001
+Cityscapes OOD,ResNet50,3,0,(),1,0.958,0.771712
+Cityscapes OOD,ResNet50,3,0,(),2,0.958,0.7690359999999999
+Cityscapes OOD,ResNet50,3,0,(),3,0.958,0.77252
+Cityscapes OOD,ResNet50,3,0,"('horizontalFlip',)",1,0.962,0.7787519999999999
+Cityscapes OOD,ResNet50,3,0,"('horizontalFlip',)",2,0.966,0.7800840000000001
+Cityscapes OOD,ResNet50,3,0,"('horizontalFlip',)",3,0.97,0.7826000000000001
+Cityscapes OOD,ResNet50,3,0,"('horizontalFlip', 'scale')",1,0.94,0.773216
+Cityscapes OOD,ResNet50,3,0,"('horizontalFlip', 'scale')",2,0.954,0.7799119999999999
+Cityscapes OOD,ResNet50,3,0,"('horizontalFlip', 'scale')",3,0.934,0.773912
+Cityscapes OOD,ResNet50,3,0,"('scale',)",1,0.928,0.77642
+Cityscapes OOD,ResNet50,3,0,"('scale',)",2,0.944,0.777572
+Cityscapes OOD,ResNet50,3,0,"('scale',)",3,0.936,0.788144
+Cityscapes OOD,ResNet50,3,1,(),1,0.976,0.8996200000000001
+Cityscapes OOD,ResNet50,3,1,(),2,0.972,0.9031
+Cityscapes OOD,ResNet50,3,1,(),3,0.978,0.8999759999999999
+Cityscapes OOD,ResNet50,3,1,"('horizontalFlip',)",1,0.982,0.87828
+Cityscapes OOD,ResNet50,3,1,"('horizontalFlip',)",2,0.99,0.8848999999999999
+Cityscapes OOD,ResNet50,3,1,"('horizontalFlip',)",3,0.99,0.8832640000000002
+Cityscapes OOD,ResNet50,3,1,"('scale',)",1,0.978,0.8186720000000001
+Cityscapes OOD,ResNet50,3,1,"('scale',)",2,0.982,0.823376
+Cityscapes OOD,ResNet50,3,1,"('scale',)",3,0.984,0.8233320000000001
+Cityscapes OOD,ResNet50,3,2,(),1,0.982,0.878144
+Cityscapes OOD,ResNet50,3,2,(),2,0.972,0.875208
+Cityscapes OOD,ResNet50,3,2,(),3,0.978,0.872532
+Cityscapes OOD,ResNet50,3,2,"('horizontalFlip',)",1,0.984,0.856336
+Cityscapes OOD,ResNet50,3,2,"('horizontalFlip',)",2,0.984,0.8614320000000001
+Cityscapes OOD,ResNet50,3,2,"('horizontalFlip',)",3,0.984,0.85474
+Cityscapes OOD,ResNet50,3,3,(),1,0.974,0.8456119999999999
+Cityscapes OOD,ResNet50,3,3,(),2,0.982,0.851004
+Cityscapes OOD,ResNet50,3,3,(),3,0.988,0.8510279999999999
+Cityscapes OOD,ResNet50,3,5,(),1,0.98,0.8068280000000001
+Cityscapes OOD,ResNet50,3,5,(),2,0.976,0.8065439999999999
+Cityscapes OOD,ResNet50,3,5,(),3,0.974,0.805028
+Cityscapes OOD,ResNet50,5,0,(),1,0.962,0.77336
+Cityscapes OOD,ResNet50,5,0,(),2,0.96,0.7753920000000001
+Cityscapes OOD,ResNet50,5,0,(),3,0.976,0.7752719999999999
+Cityscapes OOD,ResNet50,5,0,"('horizontalFlip',)",1,0.97,0.78
+Cityscapes OOD,ResNet50,5,0,"('horizontalFlip',)",2,0.964,0.7808160000000001
+Cityscapes OOD,ResNet50,5,0,"('horizontalFlip',)",3,0.97,0.783672
+Cityscapes OOD,ResNet50,5,0,"('scale',)",1,0.934,0.7847079999999999
+Cityscapes OOD,ResNet50,5,0,"('scale',)",2,0.936,0.7863600000000001
+Cityscapes OOD,ResNet50,5,0,"('scale',)",3,0.94,0.779412
+Cityscapes OOD,ResNet50,5,1,(),1,0.988,0.9015520000000001
+Cityscapes OOD,ResNet50,5,1,(),2,0.98,0.90232
+Cityscapes OOD,ResNet50,5,1,(),3,0.976,0.9017439999999999
+Cityscapes OOD,ResNet50,5,1,"('horizontalFlip',)",1,0.984,0.8830640000000001
+Cityscapes OOD,ResNet50,5,1,"('horizontalFlip',)",2,0.988,0.8799520000000001
+Cityscapes OOD,ResNet50,5,1,"('horizontalFlip',)",3,0.984,0.8843239999999999
+Cityscapes OOD,ResNet50,5,2,(),1,0.986,0.8764319999999999
+Cityscapes OOD,ResNet50,5,2,(),2,0.986,0.8691439999999999
+Cityscapes OOD,ResNet50,5,2,(),3,0.984,0.874244
+Cityscapes OOD,ResNet50,5,3,(),1,0.984,0.850976
+Cityscapes OOD,ResNet50,5,3,(),2,0.988,0.8501679999999999
+Cityscapes OOD,ResNet50,5,3,(),3,0.986,0.8493040000000001
+Cityscapes OOD,ResNet50,10,0,(),1,0.968,0.7758480000000001
+Cityscapes OOD,ResNet50,10,0,(),2,0.96,0.7766919999999999
+Cityscapes OOD,ResNet50,10,0,(),3,0.96,0.777668
+Cityscapes OOD,ResNet50,10,0,"('horizontalFlip',)",1,0.96,0.780784
+Cityscapes OOD,ResNet50,10,0,"('horizontalFlip',)",2,0.97,0.78066
+Cityscapes OOD,ResNet50,10,0,"('horizontalFlip',)",3,0.966,0.7823359999999999
+Cityscapes OOD,ResNet50,10,1,(),1,0.982,0.897036
+Cityscapes OOD,ResNet50,10,1,(),2,0.98,0.8934399999999999
+Cityscapes OOD,ResNet50,10,1,(),3,0.99,0.898604
+Cityscapes OOD,Swin-B,0,0,(),1,0.742,0.61866
+Cityscapes OOD,Swin-B,0,0,"('horizontalFlip',)",1,0.796,0.70076
+Cityscapes OOD,Swin-B,0,0,"('horizontalFlip',)",2,0.796,0.70076
+Cityscapes OOD,Swin-B,0,0,"('horizontalFlip',)",3,0.796,0.70076
+Cityscapes OOD,Swin-B,0,0,"('horizontalFlip', 'scale')",1,0.844,0.7223239999999999
+Cityscapes OOD,Swin-B,0,0,"('horizontalFlip', 'scale')",2,0.844,0.7223239999999999
+Cityscapes OOD,Swin-B,0,0,"('horizontalFlip', 'scale')",3,0.844,0.7223239999999999
+Cityscapes OOD,Swin-B,0,0,"('scale',)",1,0.818,0.6895439999999999
+Cityscapes OOD,Swin-B,0,0,"('scale',)",2,0.818,0.6895439999999999
+Cityscapes OOD,Swin-B,0,0,"('scale',)",3,0.818,0.6895439999999999
+Cityscapes OOD,Swin-B,0,1,(),1,0.958,0.8273520000000001
+Cityscapes OOD,Swin-B,0,1,(),2,0.958,0.8273520000000001
+Cityscapes OOD,Swin-B,0,1,(),3,0.958,0.8273520000000001
+Cityscapes OOD,Swin-B,0,1,"('horizontalFlip',)",1,0.942,0.7942279999999999
+Cityscapes OOD,Swin-B,0,1,"('horizontalFlip',)",2,0.942,0.7942279999999999
+Cityscapes OOD,Swin-B,0,1,"('horizontalFlip',)",3,0.942,0.7942279999999999
+Cityscapes OOD,Swin-B,0,1,"('horizontalFlip', 'scale')",1,0.94,0.806276
+Cityscapes OOD,Swin-B,0,1,"('horizontalFlip', 'scale')",2,0.94,0.806276
+Cityscapes OOD,Swin-B,0,1,"('horizontalFlip', 'scale')",3,0.94,0.806276
+Cityscapes OOD,Swin-B,0,1,"('scale',)",1,0.946,0.7896000000000001
+Cityscapes OOD,Swin-B,0,1,"('scale',)",2,0.946,0.7896000000000001
+Cityscapes OOD,Swin-B,0,1,"('scale',)",3,0.946,0.7896000000000001
+Cityscapes OOD,Swin-B,0,2,(),1,0.962,0.773468
+Cityscapes OOD,Swin-B,0,2,(),2,0.962,0.773468
+Cityscapes OOD,Swin-B,0,2,(),3,0.962,0.773468
+Cityscapes OOD,Swin-B,0,2,"('horizontalFlip',)",1,0.95,0.743112
+Cityscapes OOD,Swin-B,0,2,"('horizontalFlip',)",2,0.95,0.743112
+Cityscapes OOD,Swin-B,0,2,"('horizontalFlip',)",3,0.95,0.743112
+Cityscapes OOD,Swin-B,0,2,"('horizontalFlip', 'scale')",1,0.954,0.703044
+Cityscapes OOD,Swin-B,0,2,"('horizontalFlip', 'scale')",2,0.954,0.703044
+Cityscapes OOD,Swin-B,0,2,"('horizontalFlip', 'scale')",3,0.954,0.703044
+Cityscapes OOD,Swin-B,0,2,"('scale',)",1,0.952,0.7108040000000001
+Cityscapes OOD,Swin-B,0,2,"('scale',)",2,0.952,0.7108040000000001
+Cityscapes OOD,Swin-B,0,2,"('scale',)",3,0.952,0.7108040000000001
+Cityscapes OOD,Swin-B,0,3,(),1,0.964,0.7408640000000001
+Cityscapes OOD,Swin-B,0,3,(),2,0.964,0.7408640000000001
+Cityscapes OOD,Swin-B,0,3,(),3,0.964,0.7408640000000001
+Cityscapes OOD,Swin-B,0,3,"('horizontalFlip',)",1,0.95,0.716424
+Cityscapes OOD,Swin-B,0,3,"('horizontalFlip',)",2,0.95,0.716424
+Cityscapes OOD,Swin-B,0,3,"('horizontalFlip',)",3,0.95,0.716424
+Cityscapes OOD,Swin-B,0,3,"('scale',)",1,0.952,0.6872480000000001
+Cityscapes OOD,Swin-B,0,3,"('scale',)",2,0.952,0.6872480000000001
+Cityscapes OOD,Swin-B,0,3,"('scale',)",3,0.952,0.6872480000000001
+Cityscapes OOD,Swin-B,0,5,(),1,0.952,0.6930999999999999
+Cityscapes OOD,Swin-B,0,5,(),2,0.952,0.6930999999999999
+Cityscapes OOD,Swin-B,0,5,(),3,0.952,0.6930999999999999
+Cityscapes OOD,Swin-B,0,5,"('horizontalFlip',)",1,0.944,0.674852
+Cityscapes OOD,Swin-B,0,5,"('horizontalFlip',)",2,0.944,0.674852
+Cityscapes OOD,Swin-B,0,5,"('horizontalFlip',)",3,0.944,0.674852
+Cityscapes OOD,Swin-B,0,5,"('scale',)",1,0.948,0.6528
+Cityscapes OOD,Swin-B,0,5,"('scale',)",2,0.948,0.6528
+Cityscapes OOD,Swin-B,0,5,"('scale',)",3,0.948,0.6528
+Cityscapes OOD,Swin-B,3,0,(),1,0.746,0.634984
+Cityscapes OOD,Swin-B,3,0,(),2,0.754,0.635416
+Cityscapes OOD,Swin-B,3,0,(),3,0.766,0.622412
+Cityscapes OOD,Swin-B,3,0,"('horizontalFlip',)",1,0.802,0.67962
+Cityscapes OOD,Swin-B,3,0,"('horizontalFlip',)",2,0.786,0.676664
+Cityscapes OOD,Swin-B,3,0,"('horizontalFlip',)",3,0.78,0.6811079999999999
+Cityscapes OOD,Swin-B,3,0,"('horizontalFlip', 'scale')",1,0.846,0.74208
+Cityscapes OOD,Swin-B,3,0,"('horizontalFlip', 'scale')",2,0.862,0.739012
+Cityscapes OOD,Swin-B,3,0,"('horizontalFlip', 'scale')",3,0.858,0.7386799999999999
+Cityscapes OOD,Swin-B,3,0,"('scale',)",1,0.824,0.706188
+Cityscapes OOD,Swin-B,3,0,"('scale',)",2,0.824,0.6937280000000001
+Cityscapes OOD,Swin-B,3,0,"('scale',)",3,0.832,0.7003039999999999
+Cityscapes OOD,Swin-B,3,1,(),1,0.926,0.79258
+Cityscapes OOD,Swin-B,3,1,(),2,0.942,0.785964
+Cityscapes OOD,Swin-B,3,1,(),3,0.928,0.786488
+Cityscapes OOD,Swin-B,3,1,"('horizontalFlip',)",1,0.928,0.7990160000000001
+Cityscapes OOD,Swin-B,3,1,"('horizontalFlip',)",2,0.922,0.806532
+Cityscapes OOD,Swin-B,3,1,"('horizontalFlip',)",3,0.936,0.80228
+Cityscapes OOD,Swin-B,3,1,"('scale',)",1,0.946,0.817012
+Cityscapes OOD,Swin-B,3,1,"('scale',)",2,0.94,0.809464
+Cityscapes OOD,Swin-B,3,1,"('scale',)",3,0.938,0.812608
+Cityscapes OOD,Swin-B,3,2,(),1,0.924,0.75316
+Cityscapes OOD,Swin-B,3,2,(),2,0.926,0.74452
+Cityscapes OOD,Swin-B,3,2,(),3,0.926,0.753728
+Cityscapes OOD,Swin-B,3,2,"('horizontalFlip',)",1,0.924,0.729816
+Cityscapes OOD,Swin-B,3,2,"('horizontalFlip',)",2,0.922,0.727832
+Cityscapes OOD,Swin-B,3,2,"('horizontalFlip',)",3,0.938,0.7342759999999999
+Cityscapes OOD,Swin-B,3,3,(),1,0.91,0.726968
+Cityscapes OOD,Swin-B,3,3,(),2,0.92,0.7224999999999999
+Cityscapes OOD,Swin-B,3,3,(),3,0.9,0.725344
+Cityscapes OOD,Swin-B,3,5,(),1,0.914,0.685428
+Cityscapes OOD,Swin-B,3,5,(),2,0.926,0.686252
+Cityscapes OOD,Swin-B,3,5,(),3,0.912,0.6806019999999999
+Cityscapes OOD,Swin-B,5,0,(),1,0.766,0.645516
+Cityscapes OOD,Swin-B,5,0,(),2,0.764,0.645896
+Cityscapes OOD,Swin-B,5,0,(),3,0.762,0.63684
+Cityscapes OOD,Swin-B,5,0,"('horizontalFlip',)",1,0.8,0.674312
+Cityscapes OOD,Swin-B,5,0,"('horizontalFlip',)",2,0.788,0.6716640000000001
+Cityscapes OOD,Swin-B,5,0,"('horizontalFlip',)",3,0.806,0.681492
+Cityscapes OOD,Swin-B,5,0,"('scale',)",1,0.846,0.707564
+Cityscapes OOD,Swin-B,5,0,"('scale',)",2,0.824,0.710704
+Cityscapes OOD,Swin-B,5,0,"('scale',)",3,0.854,0.7153719999999999
+Cityscapes OOD,Swin-B,5,1,(),1,0.928,0.80406
+Cityscapes OOD,Swin-B,5,1,(),2,0.928,0.780964
+Cityscapes OOD,Swin-B,5,1,(),3,0.944,0.7962840000000002
+Cityscapes OOD,Swin-B,5,1,"('horizontalFlip',)",1,0.948,0.806456
+Cityscapes OOD,Swin-B,5,1,"('horizontalFlip',)",2,0.93,0.809824
+Cityscapes OOD,Swin-B,5,1,"('horizontalFlip',)",3,0.934,0.8108
+Cityscapes OOD,Swin-B,5,2,(),1,0.924,0.74278
+Cityscapes OOD,Swin-B,5,2,(),2,0.936,0.7463239999999999
+Cityscapes OOD,Swin-B,5,2,(),3,0.938,0.7485439999999999
+Cityscapes OOD,Swin-B,5,3,(),1,0.93,0.72126
+Cityscapes OOD,Swin-B,5,3,(),2,0.932,0.7235480000000001
+Cityscapes OOD,Swin-B,5,3,(),3,0.928,0.7190159999999999
+Cityscapes OOD,Swin-B,10,0,(),1,0.772,0.6594399999999999
+Cityscapes OOD,Swin-B,10,0,(),2,0.776,0.64328
+Cityscapes OOD,Swin-B,10,0,(),3,0.764,0.643664
+Cityscapes OOD,Swin-B,10,0,"('horizontalFlip',)",1,0.824,0.6829400000000001
+Cityscapes OOD,Swin-B,10,0,"('horizontalFlip',)",2,0.824,0.6825359999999999
+Cityscapes OOD,Swin-B,10,0,"('horizontalFlip',)",3,0.82,0.68394
+Cityscapes OOD,Swin-B,10,1,(),1,0.95,0.8064879999999999
+Cityscapes OOD,Swin-B,10,1,(),2,0.95,0.799964
+Cityscapes OOD,Swin-B,10,1,(),3,0.952,0.79508
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,0,(),1,0.768,0.6304120000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,0,"('horizontalFlip',)",1,0.82,0.653084
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,0,"('horizontalFlip',)",2,0.82,0.653084
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,0,"('horizontalFlip',)",3,0.82,0.653084
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,0,"('horizontalFlip', 'scale')",1,0.858,0.6518959999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,0,"('horizontalFlip', 'scale')",2,0.858,0.6518959999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,0,"('horizontalFlip', 'scale')",3,0.858,0.6518959999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,0,"('scale',)",1,0.832,0.645968
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,0,"('scale',)",2,0.832,0.645968
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,0,"('scale',)",3,0.832,0.645968
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,1,(),1,0.986,0.93716
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,1,(),2,0.986,0.93716
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,1,(),3,0.986,0.93716
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,1,"('horizontalFlip',)",1,0.99,0.856968
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,1,"('horizontalFlip',)",2,0.99,0.856968
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,1,"('horizontalFlip',)",3,0.99,0.856968
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,1,"('horizontalFlip', 'scale')",1,0.966,0.7864
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,1,"('horizontalFlip', 'scale')",2,0.966,0.7864
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,1,"('horizontalFlip', 'scale')",3,0.966,0.7864
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,1,"('scale',)",1,0.966,0.80304
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,1,"('scale',)",2,0.966,0.80304
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,1,"('scale',)",3,0.966,0.80304
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,2,(),1,0.99,0.892172
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,2,(),2,0.99,0.892172
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,2,(),3,0.99,0.892172
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,2,"('horizontalFlip',)",1,0.986,0.8215080000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,2,"('horizontalFlip',)",2,0.986,0.8215080000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,2,"('horizontalFlip',)",3,0.986,0.8215080000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,2,"('horizontalFlip', 'scale')",1,0.97,0.7305
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,2,"('horizontalFlip', 'scale')",2,0.97,0.7305
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,2,"('horizontalFlip', 'scale')",3,0.97,0.7305
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,2,"('scale',)",1,0.968,0.756988
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,2,"('scale',)",2,0.968,0.756988
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,2,"('scale',)",3,0.968,0.756988
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,3,(),1,0.986,0.854792
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,3,(),2,0.986,0.854792
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,3,(),3,0.986,0.854792
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,3,"('horizontalFlip',)",1,0.98,0.788716
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,3,"('horizontalFlip',)",2,0.98,0.788716
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,3,"('horizontalFlip',)",3,0.98,0.788716
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,3,"('scale',)",1,0.964,0.7298680000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,3,"('scale',)",2,0.964,0.7298680000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,3,"('scale',)",3,0.964,0.7298680000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,5,(),1,0.976,0.788996
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,5,(),2,0.976,0.788996
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,5,(),3,0.976,0.788996
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,5,"('horizontalFlip',)",1,0.964,0.735832
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,5,"('horizontalFlip',)",2,0.964,0.735832
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,5,"('horizontalFlip',)",3,0.964,0.735832
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,5,"('scale',)",1,0.952,0.690568
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,5,"('scale',)",2,0.952,0.690568
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),0,5,"('scale',)",3,0.952,0.690568
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,0,(),1,0.828,0.6533800000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,0,(),2,0.814,0.6551719999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,0,(),3,0.812,0.648196
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,0,"('horizontalFlip',)",1,0.842,0.6579720000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,0,"('horizontalFlip',)",2,0.85,0.6591239999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,0,"('horizontalFlip',)",3,0.838,0.657408
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,0,"('horizontalFlip', 'scale')",1,0.886,0.6591440000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,0,"('horizontalFlip', 'scale')",2,0.882,0.657944
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,0,"('horizontalFlip', 'scale')",3,0.882,0.657632
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,0,"('scale',)",1,0.854,0.6558439999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,0,"('scale',)",2,0.85,0.655384
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,0,"('scale',)",3,0.844,0.655116
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,1,(),1,0.978,0.8707119999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,1,(),2,0.984,0.8699760000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,1,(),3,0.982,0.871624
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,1,"('horizontalFlip',)",1,0.978,0.825152
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,1,"('horizontalFlip',)",2,0.98,0.830048
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,1,"('horizontalFlip',)",3,0.976,0.8289279999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,1,"('scale',)",1,0.968,0.8101440000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,1,"('scale',)",2,0.97,0.810496
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,1,"('scale',)",3,0.978,0.82118
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,2,(),1,0.982,0.832652
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,2,(),2,0.982,0.833828
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,2,(),3,0.984,0.834792
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,2,"('horizontalFlip',)",1,0.978,0.7827999999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,2,"('horizontalFlip',)",2,0.974,0.7818160000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,2,"('horizontalFlip',)",3,0.974,0.783444
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,3,(),1,0.986,0.8003880000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,3,(),2,0.982,0.7967319999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,3,(),3,0.98,0.7991539999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,5,(),1,0.968,0.73626
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,5,(),2,0.97,0.7396199999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),3,5,(),3,0.97,0.7385839999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,0,(),1,0.822,0.6620320000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,0,(),2,0.81,0.650828
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,0,(),3,0.828,0.6553399999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,0,"('horizontalFlip',)",1,0.846,0.6639600000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,0,"('horizontalFlip',)",2,0.848,0.663872
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,0,"('horizontalFlip',)",3,0.856,0.6661159999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,0,"('scale',)",1,0.852,0.658096
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,0,"('scale',)",2,0.858,0.6571199999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,0,"('scale',)",3,0.846,0.656632
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,1,(),1,0.976,0.868348
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,1,(),2,0.974,0.8657959999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,1,(),3,0.98,0.8650959999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,1,"('horizontalFlip',)",1,0.98,0.8249199999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,1,"('horizontalFlip',)",2,0.988,0.8205520000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,1,"('horizontalFlip',)",3,0.974,0.81646
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,2,(),1,0.986,0.827944
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,2,(),2,0.982,0.8265039999999999
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,2,(),3,0.99,0.829392
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,3,(),1,0.98,0.794092
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,3,(),2,0.984,0.796384
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),5,3,(),3,0.98,0.7931000000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),10,0,(),1,0.83,0.664796
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),10,0,(),2,0.818,0.658832
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),10,0,(),3,0.832,0.6644
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),10,0,"('horizontalFlip',)",1,0.852,0.6669080000000001
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),10,0,"('horizontalFlip',)",2,0.85,0.667896
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),10,0,"('horizontalFlip',)",3,0.852,0.668352
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),10,1,(),1,0.978,0.860792
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),10,1,(),2,0.98,0.862648
+Cityscapes OOD (VIPER model),DINOv2 (ViT-B),10,1,(),3,0.982,0.861184
+Cityscapes OOD (VIPER model),ResNet50,0,0,(),1,0.872,0.739676
+Cityscapes OOD (VIPER model),ResNet50,0,0,"('horizontalFlip',)",1,0.86,0.731652
+Cityscapes OOD (VIPER model),ResNet50,0,0,"('horizontalFlip',)",2,0.86,0.731652
+Cityscapes OOD (VIPER model),ResNet50,0,0,"('horizontalFlip',)",3,0.86,0.731652
+Cityscapes OOD (VIPER model),ResNet50,0,0,"('horizontalFlip', 'scale')",1,0.76,0.675288
+Cityscapes OOD (VIPER model),ResNet50,0,0,"('horizontalFlip', 'scale')",2,0.76,0.675288
+Cityscapes OOD (VIPER model),ResNet50,0,0,"('horizontalFlip', 'scale')",3,0.76,0.675288
+Cityscapes OOD (VIPER model),ResNet50,0,0,"('scale',)",1,0.78,0.6931
+Cityscapes OOD (VIPER model),ResNet50,0,0,"('scale',)",2,0.78,0.6931
+Cityscapes OOD (VIPER model),ResNet50,0,0,"('scale',)",3,0.78,0.6931
+Cityscapes OOD (VIPER model),ResNet50,0,1,(),1,0.984,0.956048
+Cityscapes OOD (VIPER model),ResNet50,0,1,(),2,0.984,0.956048
+Cityscapes OOD (VIPER model),ResNet50,0,1,(),3,0.984,0.956048
+Cityscapes OOD (VIPER model),ResNet50,0,1,"('horizontalFlip',)",1,0.984,0.889792
+Cityscapes OOD (VIPER model),ResNet50,0,1,"('horizontalFlip',)",2,0.984,0.889792
+Cityscapes OOD (VIPER model),ResNet50,0,1,"('horizontalFlip',)",3,0.984,0.889792
+Cityscapes OOD (VIPER model),ResNet50,0,1,"('horizontalFlip', 'scale')",1,0.958,0.844684
+Cityscapes OOD (VIPER model),ResNet50,0,1,"('horizontalFlip', 'scale')",2,0.958,0.844684
+Cityscapes OOD (VIPER model),ResNet50,0,1,"('horizontalFlip', 'scale')",3,0.958,0.844684
+Cityscapes OOD (VIPER model),ResNet50,0,1,"('scale',)",1,0.948,0.8561080000000001
+Cityscapes OOD (VIPER model),ResNet50,0,1,"('scale',)",2,0.948,0.8561080000000001
+Cityscapes OOD (VIPER model),ResNet50,0,1,"('scale',)",3,0.948,0.8561080000000001
+Cityscapes OOD (VIPER model),ResNet50,0,2,(),1,0.988,0.9131279999999999
+Cityscapes OOD (VIPER model),ResNet50,0,2,(),2,0.988,0.9131279999999999
+Cityscapes OOD (VIPER model),ResNet50,0,2,(),3,0.988,0.9131279999999999
+Cityscapes OOD (VIPER model),ResNet50,0,2,"('horizontalFlip',)",1,0.992,0.8562480000000001
+Cityscapes OOD (VIPER model),ResNet50,0,2,"('horizontalFlip',)",2,0.992,0.8562480000000001
+Cityscapes OOD (VIPER model),ResNet50,0,2,"('horizontalFlip',)",3,0.992,0.8562480000000001
+Cityscapes OOD (VIPER model),ResNet50,0,2,"('horizontalFlip', 'scale')",1,0.964,0.766676
+Cityscapes OOD (VIPER model),ResNet50,0,2,"('horizontalFlip', 'scale')",2,0.964,0.766676
+Cityscapes OOD (VIPER model),ResNet50,0,2,"('horizontalFlip', 'scale')",3,0.964,0.766676
+Cityscapes OOD (VIPER model),ResNet50,0,2,"('scale',)",1,0.956,0.776024
+Cityscapes OOD (VIPER model),ResNet50,0,2,"('scale',)",2,0.956,0.776024
+Cityscapes OOD (VIPER model),ResNet50,0,2,"('scale',)",3,0.956,0.776024
+Cityscapes OOD (VIPER model),ResNet50,0,3,(),1,0.988,0.879368
+Cityscapes OOD (VIPER model),ResNet50,0,3,(),2,0.988,0.879368
+Cityscapes OOD (VIPER model),ResNet50,0,3,(),3,0.988,0.879368
+Cityscapes OOD (VIPER model),ResNet50,0,3,"('horizontalFlip',)",1,0.99,0.8216760000000001
+Cityscapes OOD (VIPER model),ResNet50,0,3,"('horizontalFlip',)",2,0.99,0.8216760000000001
+Cityscapes OOD (VIPER model),ResNet50,0,3,"('horizontalFlip',)",3,0.99,0.8216760000000001
+Cityscapes OOD (VIPER model),ResNet50,0,3,"('scale',)",1,0.954,0.732784
+Cityscapes OOD (VIPER model),ResNet50,0,3,"('scale',)",2,0.954,0.732784
+Cityscapes OOD (VIPER model),ResNet50,0,3,"('scale',)",3,0.954,0.732784
+Cityscapes OOD (VIPER model),ResNet50,0,5,(),1,0.986,0.818496
+Cityscapes OOD (VIPER model),ResNet50,0,5,(),2,0.986,0.818496
+Cityscapes OOD (VIPER model),ResNet50,0,5,(),3,0.986,0.818496
+Cityscapes OOD (VIPER model),ResNet50,0,5,"('horizontalFlip',)",1,0.984,0.7673079999999999
+Cityscapes OOD (VIPER model),ResNet50,0,5,"('horizontalFlip',)",2,0.984,0.7673079999999999
+Cityscapes OOD (VIPER model),ResNet50,0,5,"('horizontalFlip',)",3,0.984,0.7673079999999999
+Cityscapes OOD (VIPER model),ResNet50,0,5,"('scale',)",1,0.948,0.6608400000000001
+Cityscapes OOD (VIPER model),ResNet50,0,5,"('scale',)",2,0.948,0.6608400000000001
+Cityscapes OOD (VIPER model),ResNet50,0,5,"('scale',)",3,0.948,0.6608400000000001
+Cityscapes OOD (VIPER model),ResNet50,3,0,(),1,0.894,0.7519
+Cityscapes OOD (VIPER model),ResNet50,3,0,(),2,0.874,0.7478239999999999
+Cityscapes OOD (VIPER model),ResNet50,3,0,(),3,0.906,0.754052
+Cityscapes OOD (VIPER model),ResNet50,3,0,"('horizontalFlip',)",1,0.874,0.738272
+Cityscapes OOD (VIPER model),ResNet50,3,0,"('horizontalFlip',)",2,0.874,0.7366199999999999
+Cityscapes OOD (VIPER model),ResNet50,3,0,"('horizontalFlip',)",3,0.882,0.7400559999999999
+Cityscapes OOD (VIPER model),ResNet50,3,0,"('horizontalFlip', 'scale')",1,0.776,0.667384
+Cityscapes OOD (VIPER model),ResNet50,3,0,"('horizontalFlip', 'scale')",2,0.762,0.673504
+Cityscapes OOD (VIPER model),ResNet50,3,0,"('horizontalFlip', 'scale')",3,0.768,0.675048
+Cityscapes OOD (VIPER model),ResNet50,3,0,"('scale',)",1,0.78,0.6879559999999999
+Cityscapes OOD (VIPER model),ResNet50,3,0,"('scale',)",2,0.8,0.672044
+Cityscapes OOD (VIPER model),ResNet50,3,0,"('scale',)",3,0.774,0.6801200000000001
+Cityscapes OOD (VIPER model),ResNet50,3,1,(),1,0.978,0.8958359999999999
+Cityscapes OOD (VIPER model),ResNet50,3,1,(),2,0.986,0.898448
+Cityscapes OOD (VIPER model),ResNet50,3,1,(),3,0.982,0.892468
+Cityscapes OOD (VIPER model),ResNet50,3,1,"('horizontalFlip',)",1,0.986,0.8567119999999999
+Cityscapes OOD (VIPER model),ResNet50,3,1,"('horizontalFlip',)",2,0.994,0.865616
+Cityscapes OOD (VIPER model),ResNet50,3,1,"('horizontalFlip',)",3,0.988,0.85388
+Cityscapes OOD (VIPER model),ResNet50,3,1,"('scale',)",1,0.938,0.8301640000000001
+Cityscapes OOD (VIPER model),ResNet50,3,1,"('scale',)",2,0.956,0.835736
+Cityscapes OOD (VIPER model),ResNet50,3,1,"('scale',)",3,0.95,0.8322360000000001
+Cityscapes OOD (VIPER model),ResNet50,3,2,(),1,0.982,0.8526039999999999
+Cityscapes OOD (VIPER model),ResNet50,3,2,(),2,0.986,0.8517440000000001
+Cityscapes OOD (VIPER model),ResNet50,3,2,(),3,0.986,0.8533919999999999
+Cityscapes OOD (VIPER model),ResNet50,3,2,"('horizontalFlip',)",1,0.994,0.822336
+Cityscapes OOD (VIPER model),ResNet50,3,2,"('horizontalFlip',)",2,0.994,0.821328
+Cityscapes OOD (VIPER model),ResNet50,3,2,"('horizontalFlip',)",3,0.992,0.8213320000000002
+Cityscapes OOD (VIPER model),ResNet50,3,3,(),1,0.99,0.8180840000000001
+Cityscapes OOD (VIPER model),ResNet50,3,3,(),2,0.99,0.818308
+Cityscapes OOD (VIPER model),ResNet50,3,3,(),3,0.988,0.8192400000000001
+Cityscapes OOD (VIPER model),ResNet50,3,5,(),1,0.984,0.7673519999999999
+Cityscapes OOD (VIPER model),ResNet50,3,5,(),2,0.99,0.7655439999999999
+Cityscapes OOD (VIPER model),ResNet50,3,5,(),3,0.984,0.766732
+Cityscapes OOD (VIPER model),ResNet50,5,0,(),1,0.878,0.745784
+Cityscapes OOD (VIPER model),ResNet50,5,0,(),2,0.882,0.7452400000000001
+Cityscapes OOD (VIPER model),ResNet50,5,0,(),3,0.89,0.744796
+Cityscapes OOD (VIPER model),ResNet50,5,0,"('horizontalFlip',)",1,0.862,0.731328
+Cityscapes OOD (VIPER model),ResNet50,5,0,"('horizontalFlip',)",2,0.876,0.7359520000000002
+Cityscapes OOD (VIPER model),ResNet50,5,0,"('horizontalFlip',)",3,0.88,0.7361960000000001
+Cityscapes OOD (VIPER model),ResNet50,5,0,"('scale',)",1,0.766,0.690968
+Cityscapes OOD (VIPER model),ResNet50,5,0,"('scale',)",2,0.766,0.685692
+Cityscapes OOD (VIPER model),ResNet50,5,0,"('scale',)",3,0.784,0.6859680000000001
+Cityscapes OOD (VIPER model),ResNet50,5,1,(),1,0.978,0.884128
+Cityscapes OOD (VIPER model),ResNet50,5,1,(),2,0.984,0.8879279999999999
+Cityscapes OOD (VIPER model),ResNet50,5,1,(),3,0.982,0.887524
+Cityscapes OOD (VIPER model),ResNet50,5,1,"('horizontalFlip',)",1,0.988,0.8667600000000001
+Cityscapes OOD (VIPER model),ResNet50,5,1,"('horizontalFlip',)",2,0.994,0.863392
+Cityscapes OOD (VIPER model),ResNet50,5,1,"('horizontalFlip',)",3,0.99,0.8703160000000001
+Cityscapes OOD (VIPER model),ResNet50,5,2,(),1,0.992,0.8499
+Cityscapes OOD (VIPER model),ResNet50,5,2,(),2,0.99,0.850096
+Cityscapes OOD (VIPER model),ResNet50,5,2,(),3,0.99,0.84972
+Cityscapes OOD (VIPER model),ResNet50,5,3,(),1,0.99,0.815448
+Cityscapes OOD (VIPER model),ResNet50,5,3,(),2,0.988,0.817188
+Cityscapes OOD (VIPER model),ResNet50,5,3,(),3,0.99,0.81974
+Cityscapes OOD (VIPER model),ResNet50,10,0,(),1,0.866,0.7390639999999999
+Cityscapes OOD (VIPER model),ResNet50,10,0,(),2,0.88,0.743016
+Cityscapes OOD (VIPER model),ResNet50,10,0,(),3,0.88,0.743592
+Cityscapes OOD (VIPER model),ResNet50,10,0,"('horizontalFlip',)",1,0.882,0.732076
+Cityscapes OOD (VIPER model),ResNet50,10,0,"('horizontalFlip',)",2,0.866,0.7328600000000001
+Cityscapes OOD (VIPER model),ResNet50,10,0,"('horizontalFlip',)",3,0.854,0.7300599999999999
+Cityscapes OOD (VIPER model),ResNet50,10,1,(),1,0.984,0.881468
+Cityscapes OOD (VIPER model),ResNet50,10,1,(),2,0.986,0.8838279999999998
+Cityscapes OOD (VIPER model),ResNet50,10,1,(),3,0.986,0.8816120000000001
+Cityscapes OOD (VIPER model),Swin-B,0,0,(),1,0.7,0.63716
+Cityscapes OOD (VIPER model),Swin-B,0,0,"('horizontalFlip',)",1,0.722,0.6729919999999998
+Cityscapes OOD (VIPER model),Swin-B,0,0,"('horizontalFlip',)",2,0.722,0.6729919999999998
+Cityscapes OOD (VIPER model),Swin-B,0,0,"('horizontalFlip',)",3,0.722,0.6729919999999998
+Cityscapes OOD (VIPER model),Swin-B,0,0,"('horizontalFlip', 'scale')",1,0.758,0.6801320000000001
+Cityscapes OOD (VIPER model),Swin-B,0,0,"('horizontalFlip', 'scale')",2,0.758,0.6801320000000001
+Cityscapes OOD (VIPER model),Swin-B,0,0,"('horizontalFlip', 'scale')",3,0.758,0.6801320000000001
+Cityscapes OOD (VIPER model),Swin-B,0,0,"('scale',)",1,0.754,0.664984
+Cityscapes OOD (VIPER model),Swin-B,0,0,"('scale',)",2,0.754,0.664984
+Cityscapes OOD (VIPER model),Swin-B,0,0,"('scale',)",3,0.754,0.664984
+Cityscapes OOD (VIPER model),Swin-B,0,1,(),1,0.974,0.938124
+Cityscapes OOD (VIPER model),Swin-B,0,1,(),2,0.974,0.938124
+Cityscapes OOD (VIPER model),Swin-B,0,1,(),3,0.974,0.938124
+Cityscapes OOD (VIPER model),Swin-B,0,1,"('horizontalFlip',)",1,0.978,0.891412
+Cityscapes OOD (VIPER model),Swin-B,0,1,"('horizontalFlip',)",2,0.978,0.891412
+Cityscapes OOD (VIPER model),Swin-B,0,1,"('horizontalFlip',)",3,0.978,0.891412
+Cityscapes OOD (VIPER model),Swin-B,0,1,"('horizontalFlip', 'scale')",1,0.964,0.840192
+Cityscapes OOD (VIPER model),Swin-B,0,1,"('horizontalFlip', 'scale')",2,0.964,0.840192
+Cityscapes OOD (VIPER model),Swin-B,0,1,"('horizontalFlip', 'scale')",3,0.964,0.840192
+Cityscapes OOD (VIPER model),Swin-B,0,1,"('scale',)",1,0.948,0.842168
+Cityscapes OOD (VIPER model),Swin-B,0,1,"('scale',)",2,0.948,0.842168
+Cityscapes OOD (VIPER model),Swin-B,0,1,"('scale',)",3,0.948,0.842168
+Cityscapes OOD (VIPER model),Swin-B,0,2,(),1,0.984,0.896484
+Cityscapes OOD (VIPER model),Swin-B,0,2,(),2,0.984,0.896484
+Cityscapes OOD (VIPER model),Swin-B,0,2,(),3,0.984,0.896484
+Cityscapes OOD (VIPER model),Swin-B,0,2,"('horizontalFlip',)",1,0.984,0.8615600000000001
+Cityscapes OOD (VIPER model),Swin-B,0,2,"('horizontalFlip',)",2,0.984,0.8615600000000001
+Cityscapes OOD (VIPER model),Swin-B,0,2,"('horizontalFlip',)",3,0.984,0.8615600000000001
+Cityscapes OOD (VIPER model),Swin-B,0,2,"('horizontalFlip', 'scale')",1,0.97,0.7930959999999999
+Cityscapes OOD (VIPER model),Swin-B,0,2,"('horizontalFlip', 'scale')",2,0.97,0.7930959999999999
+Cityscapes OOD (VIPER model),Swin-B,0,2,"('horizontalFlip', 'scale')",3,0.97,0.7930959999999999
+Cityscapes OOD (VIPER model),Swin-B,0,2,"('scale',)",1,0.958,0.8048319999999999
+Cityscapes OOD (VIPER model),Swin-B,0,2,"('scale',)",2,0.958,0.8048319999999999
+Cityscapes OOD (VIPER model),Swin-B,0,2,"('scale',)",3,0.958,0.8048319999999999
+Cityscapes OOD (VIPER model),Swin-B,0,3,(),1,0.986,0.8636159999999999
+Cityscapes OOD (VIPER model),Swin-B,0,3,(),2,0.986,0.8636159999999999
+Cityscapes OOD (VIPER model),Swin-B,0,3,(),3,0.986,0.8636159999999999
+Cityscapes OOD (VIPER model),Swin-B,0,3,"('horizontalFlip',)",1,0.982,0.832648
+Cityscapes OOD (VIPER model),Swin-B,0,3,"('horizontalFlip',)",2,0.982,0.832648
+Cityscapes OOD (VIPER model),Swin-B,0,3,"('horizontalFlip',)",3,0.982,0.832648
+Cityscapes OOD (VIPER model),Swin-B,0,3,"('scale',)",1,0.96,0.778028
+Cityscapes OOD (VIPER model),Swin-B,0,3,"('scale',)",2,0.96,0.778028
+Cityscapes OOD (VIPER model),Swin-B,0,3,"('scale',)",3,0.96,0.778028
+Cityscapes OOD (VIPER model),Swin-B,0,5,(),1,0.988,0.801364
+Cityscapes OOD (VIPER model),Swin-B,0,5,(),2,0.988,0.801364
+Cityscapes OOD (VIPER model),Swin-B,0,5,(),3,0.988,0.801364
+Cityscapes OOD (VIPER model),Swin-B,0,5,"('horizontalFlip',)",1,0.984,0.779048
+Cityscapes OOD (VIPER model),Swin-B,0,5,"('horizontalFlip',)",2,0.984,0.779048
+Cityscapes OOD (VIPER model),Swin-B,0,5,"('horizontalFlip',)",3,0.984,0.779048
+Cityscapes OOD (VIPER model),Swin-B,0,5,"('scale',)",1,0.954,0.7302280000000001
+Cityscapes OOD (VIPER model),Swin-B,0,5,"('scale',)",2,0.954,0.7302280000000001
+Cityscapes OOD (VIPER model),Swin-B,0,5,"('scale',)",3,0.954,0.7302280000000001
+Cityscapes OOD (VIPER model),Swin-B,3,0,(),1,0.704,0.6428759999999999
+Cityscapes OOD (VIPER model),Swin-B,3,0,(),2,0.724,0.63162
+Cityscapes OOD (VIPER model),Swin-B,3,0,(),3,0.716,0.6540119999999999
+Cityscapes OOD (VIPER model),Swin-B,3,0,"('horizontalFlip',)",1,0.732,0.657036
+Cityscapes OOD (VIPER model),Swin-B,3,0,"('horizontalFlip',)",2,0.74,0.6616759999999999
+Cityscapes OOD (VIPER model),Swin-B,3,0,"('horizontalFlip',)",3,0.736,0.6571559999999999
+Cityscapes OOD (VIPER model),Swin-B,3,0,"('horizontalFlip', 'scale')",1,0.766,0.6801999999999999
+Cityscapes OOD (VIPER model),Swin-B,3,0,"('horizontalFlip', 'scale')",2,0.796,0.679324
+Cityscapes OOD (VIPER model),Swin-B,3,0,"('horizontalFlip', 'scale')",3,0.768,0.678516
+Cityscapes OOD (VIPER model),Swin-B,3,0,"('scale',)",1,0.75,0.6636599999999999
+Cityscapes OOD (VIPER model),Swin-B,3,0,"('scale',)",2,0.756,0.6722919999999999
+Cityscapes OOD (VIPER model),Swin-B,3,0,"('scale',)",3,0.75,0.6655920000000001
+Cityscapes OOD (VIPER model),Swin-B,3,1,(),1,0.948,0.87356
+Cityscapes OOD (VIPER model),Swin-B,3,1,(),2,0.946,0.876592
+Cityscapes OOD (VIPER model),Swin-B,3,1,(),3,0.95,0.872536
+Cityscapes OOD (VIPER model),Swin-B,3,1,"('horizontalFlip',)",1,0.956,0.854676
+Cityscapes OOD (VIPER model),Swin-B,3,1,"('horizontalFlip',)",2,0.964,0.8551440000000001
+Cityscapes OOD (VIPER model),Swin-B,3,1,"('horizontalFlip',)",3,0.968,0.856772
+Cityscapes OOD (VIPER model),Swin-B,3,1,"('scale',)",1,0.956,0.8162159999999998
+Cityscapes OOD (VIPER model),Swin-B,3,1,"('scale',)",2,0.936,0.8131919999999999
+Cityscapes OOD (VIPER model),Swin-B,3,1,"('scale',)",3,0.95,0.814872
+Cityscapes OOD (VIPER model),Swin-B,3,2,(),1,0.968,0.8420000000000001
+Cityscapes OOD (VIPER model),Swin-B,3,2,(),2,0.96,0.848576
+Cityscapes OOD (VIPER model),Swin-B,3,2,(),3,0.962,0.8524800000000001
+Cityscapes OOD (VIPER model),Swin-B,3,2,"('horizontalFlip',)",1,0.982,0.8313640000000001
+Cityscapes OOD (VIPER model),Swin-B,3,2,"('horizontalFlip',)",2,0.976,0.82891
+Cityscapes OOD (VIPER model),Swin-B,3,2,"('horizontalFlip',)",3,0.966,0.823164
+Cityscapes OOD (VIPER model),Swin-B,3,3,(),1,0.954,0.814016
+Cityscapes OOD (VIPER model),Swin-B,3,3,(),2,0.952,0.818236
+Cityscapes OOD (VIPER model),Swin-B,3,3,(),3,0.95,0.8148080000000001
+Cityscapes OOD (VIPER model),Swin-B,3,5,(),1,0.958,0.767556
+Cityscapes OOD (VIPER model),Swin-B,3,5,(),2,0.956,0.7639800000000001
+Cityscapes OOD (VIPER model),Swin-B,3,5,(),3,0.964,0.766192
+Cityscapes OOD (VIPER model),Swin-B,5,0,(),1,0.722,0.660804
+Cityscapes OOD (VIPER model),Swin-B,5,0,(),2,0.698,0.64198
+Cityscapes OOD (VIPER model),Swin-B,5,0,(),3,0.736,0.6587120000000001
+Cityscapes OOD (VIPER model),Swin-B,5,0,"('horizontalFlip',)",1,0.732,0.6620079999999999
+Cityscapes OOD (VIPER model),Swin-B,5,0,"('horizontalFlip',)",2,0.742,0.6611079999999999
+Cityscapes OOD (VIPER model),Swin-B,5,0,"('horizontalFlip',)",3,0.72,0.6542
+Cityscapes OOD (VIPER model),Swin-B,5,0,"('scale',)",1,0.754,0.6722199999999999
+Cityscapes OOD (VIPER model),Swin-B,5,0,"('scale',)",2,0.752,0.6702319999999999
+Cityscapes OOD (VIPER model),Swin-B,5,0,"('scale',)",3,0.758,0.6744359999999999
+Cityscapes OOD (VIPER model),Swin-B,5,1,(),1,0.972,0.8740720000000001
+Cityscapes OOD (VIPER model),Swin-B,5,1,(),2,0.97,0.8786799999999999
+Cityscapes OOD (VIPER model),Swin-B,5,1,(),3,0.958,0.874084
+Cityscapes OOD (VIPER model),Swin-B,5,1,"('horizontalFlip',)",1,0.966,0.851592
+Cityscapes OOD (VIPER model),Swin-B,5,1,"('horizontalFlip',)",2,0.964,0.8581920000000001
+Cityscapes OOD (VIPER model),Swin-B,5,1,"('horizontalFlip',)",3,0.974,0.851384
+Cityscapes OOD (VIPER model),Swin-B,5,2,(),1,0.968,0.8412000000000001
+Cityscapes OOD (VIPER model),Swin-B,5,2,(),2,0.966,0.84602
+Cityscapes OOD (VIPER model),Swin-B,5,2,(),3,0.974,0.8515319999999998
+Cityscapes OOD (VIPER model),Swin-B,5,3,(),1,0.98,0.818
+Cityscapes OOD (VIPER model),Swin-B,5,3,(),2,0.97,0.8187440000000001
+Cityscapes OOD (VIPER model),Swin-B,5,3,(),3,0.966,0.8156319999999999
+Cityscapes OOD (VIPER model),Swin-B,10,0,(),1,0.73,0.65902
+Cityscapes OOD (VIPER model),Swin-B,10,0,(),2,0.718,0.64778
+Cityscapes OOD (VIPER model),Swin-B,10,0,(),3,0.734,0.6515320000000001
+Cityscapes OOD (VIPER model),Swin-B,10,0,"('horizontalFlip',)",1,0.758,0.66826
+Cityscapes OOD (VIPER model),Swin-B,10,0,"('horizontalFlip',)",2,0.742,0.667216
+Cityscapes OOD (VIPER model),Swin-B,10,0,"('horizontalFlip',)",3,0.758,0.670712
+Cityscapes OOD (VIPER model),Swin-B,10,1,(),1,0.966,0.868236
+Cityscapes OOD (VIPER model),Swin-B,10,1,(),2,0.968,0.8741519999999999
+Cityscapes OOD (VIPER model),Swin-B,10,1,(),3,0.97,0.871312

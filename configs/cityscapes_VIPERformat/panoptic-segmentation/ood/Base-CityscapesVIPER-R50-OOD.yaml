@@ -1,0 +1,4 @@
+_BASE_: ../maskformer2_R50_base.yaml
+DATASETS:
+  TEST: ("cityscapes_VIPER_format_val_panoptic_with_semseg_with_ood",)
+OUTPUT_DIR: maskformer2_R50_cityscapesOOD_VIPERformat_VIPER

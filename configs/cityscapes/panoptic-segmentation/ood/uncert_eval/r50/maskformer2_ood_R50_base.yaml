@@ -1,0 +1,6 @@
+_BASE_: ../../Base-Cityscapes-R50-OOD.yaml
+MODEL:
+  WEIGHTS: "weightfolder://model_final_4ab90c.pkl" # From FB Model Zoo
+  MASK_FORMER:
+    DROPOUT: 0.0
+OUTPUT_DIR: uncert_eval/maskformer2_cityscapesOOD_R50_base

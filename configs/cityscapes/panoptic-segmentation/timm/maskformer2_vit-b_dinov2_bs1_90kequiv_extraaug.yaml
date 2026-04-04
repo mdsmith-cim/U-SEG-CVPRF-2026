@@ -1,0 +1,5 @@
+_BASE_: maskformer2_vit-b_dinov2_bs1_90kequiv.yaml
+INPUT:
+  ROTATION_AUG: True
+  GAUSSIAN_AUG: True
+OUTPUT_DIR: vit_b_dinov2_Cityscapes_90kequiv_extraaug

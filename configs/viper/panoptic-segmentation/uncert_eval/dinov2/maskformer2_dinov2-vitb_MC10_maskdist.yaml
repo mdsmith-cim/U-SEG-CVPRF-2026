@@ -1,0 +1,16 @@
+_BASE_: maskformer2_dinov2-vitb_base.yaml
+MODEL:
+  MASK_FORMER:
+    DROPOUT: 0.1
+    UNCERTAINTY:
+      SEMANTIC_AGGREGATION_METHOD: 'mask_dist'
+      INSTANCE_AGGREGATION_METHOD: 'mask_dist'
+      PANOPTIC_AGGREGATION_METHOD: 'mask_dist'
+      MC_DROPOUT_ENABLED: True
+      MC_DROPOUT_SAMPLES: 10
+      AGGREGATION_OVERLAP_THRESHOLD: 0.2
+      AGGREGATION_VOTE_THRESHOLD: 0.8
+      TTA_ENABLED: False
+      TTA_TRANSFORMS: ("horizontalFlip",)
+      TIMESERIES_NUM_PREV_FRAMES: 0
+OUTPUT_DIR: uncert_eval/maskformer2_VIPER_dinov2-vitb_MC10_mask_dist

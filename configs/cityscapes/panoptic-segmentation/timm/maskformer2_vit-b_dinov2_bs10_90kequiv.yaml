@@ -1,0 +1,8 @@
+_BASE_: maskformer2_vit-b_dinov2_bs1_90kequiv.yaml
+SOLVER:
+  IMS_PER_BATCH: 10
+  # Cityscapes has 2975 images in training set, 500 in val
+  MAX_ITER: 1152000 # Formula: (# images * # epochs / batch size)
+  CHECKPOINT_PERIOD: 14875 # Every 50 epochs
+TEST:
+  EVAL_PERIOD: 14875 # Every 50 epoch

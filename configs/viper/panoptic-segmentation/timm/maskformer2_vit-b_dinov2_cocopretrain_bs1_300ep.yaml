@@ -1,0 +1,7 @@
+_BASE_: maskformer2_vit-b_dinov2_bs1_300ep.yaml
+MODEL:
+  WEIGHTS: "weightfolder://coco_maskformer2_vit-b_dinov2_thawed_50ep.pth" # This model pretrained on COCO
+  TIMMMODEL:
+    MODEL_NAME: 'vit_base_patch14_reg4_dinov2.lvd142m'
+    OUT_FEATURES: [8,9,10,11]
+    PRETRAINED: False # Pretrained weights already in file

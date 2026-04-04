@@ -1,0 +1,8 @@
+_BASE_: maskformer2_vit-b_dinov2_cocopretrain_bs1_300ep.yaml
+SOLVER:
+  IMS_PER_BATCH: 6 # For narval 40GB A100 GPU
+  # VIPER has 13367 images in training set, 4959 in val
+  MAX_ITER: 668350 # 300 epochs (# images * # epochs / batch size)
+  CHECKPOINT_PERIOD: 11139 # Every 5 epochs
+TEST:
+  EVAL_PERIOD: 11139 # Every 5 epoch

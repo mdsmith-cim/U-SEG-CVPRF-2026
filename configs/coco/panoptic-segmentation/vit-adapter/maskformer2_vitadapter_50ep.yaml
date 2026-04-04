@@ -1,0 +1,44 @@
+_BASE_: ../maskformer2_R50_bs16_50ep.yaml
+MODEL:
+  BACKBONE:
+    NAME: "D2ViTAdapter"
+  WEIGHTS: "/home/vision/msmith/localDrive2/msmith/Mask2FormerWeights/vit-adapter/mask_rcnn_dinov2_adapter_large_fpn_3x_coco_converted.pkl" # Pretrained backbone only
+  VITADAPTER:
+    PRETRAIN_SIZE: 592
+    IMG_SIZE: 592
+    PATCH_SIZE: 16
+    EMBED_DIM: 1024
+    DEPTH: 24
+    NUM_HEADS: 16
+    MLP_RATIO: 4
+    DROP_PATH_RATE: 0.4
+    CONV_INPLANE: 64
+    N_POINTS: 4
+    DEFORM_NUM_HEADS: 16
+    CFFN_RATIO: 0.25
+    DEFORM_RATIO: 0.5
+    INTERACTION_INDEXES: [[0, 5], [6, 11], [12, 17], [18, 23]]
+    WINDOW_ATTN: [True, True, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, False]
+    WINDOW_SIZE: [14, 14, 14, 14, 14, None, 14, 14, 14, 14, 14, None, 14, 14, 14, 14, 14, None, 14, 14, 14, 14, 14, None]
+    FREEZE_VIT: True
+    OUT_FEATURES: [0,1,2,3]
+  SEM_SEG_HEAD:
+    IN_FEATURES: [0,1,2,3]
+    DEFORMABLE_TRANSFORMER_ENCODER_IN_FEATURES: [1,2,3]
+  MASK_FORMER:
+    TEST:
+      SEMANTIC_ON: False
+      INSTANCE_ON: False
+SOLVER:
+  IMS_PER_BATCH: 2 # most that can fit on 24GB GPU
+  STEPS: (2602314, 2838888) #88%,96%
+  MAX_ITER: 2957175 # 50 epochs (118287 * 50 / 2)
+OUTPUT_DIR: vit_adapter_50ep_pretrained_frommaskrcnn_coco_dinov2
+TEST:
+  EVAL_PERIOD: 10000
+#INPUT:
+#  IMAGE_SIZE: 800 # TODO: Determine what model image size expectations/constraints are
+#  MIN_SIZE_TRAIN: (800,) # I believe with the selected dataloader MIN_SIZE_TRAIN and MAX_SIZE_TRAIN are never used
+#  MAX_SIZE_TRAIN: 800
+#  MIN_SIZE_TEST: 800
+#  MAX_SIZE_TEST: 800

@@ -1,0 +1,12 @@
+_BASE_: ../../Base-PanopticSegmentation.yaml
+MODEL:
+  META_ARCHITECTURE: "MaskFormerUncertainty"
+  WEIGHTS: "weightfolder://model_final_4ab90c.pkl" # From FB Model Zoo - R50 Cityscapes model
+  SEM_SEG_HEAD:
+    NAME: "MaskFormerHeadUncertainty"
+  MASK_FORMER:
+    DROPOUT: 0.0
+SEED: -1
+TEST:
+  EVALUATORS: ("PanopticQualityV3", "saveResults", "SemSegEvaluatorV2")
+OUTPUT_DIR: uncert_eval/maskformer2_VIPER_cityscapesformat_R50_base

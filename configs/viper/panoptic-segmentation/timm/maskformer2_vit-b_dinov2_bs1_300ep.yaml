@@ -1,0 +1,23 @@
+_BASE_: ../maskformer2_R50_bs1_300ep.yaml
+MODEL:
+  BACKBONE:
+    NAME: "D2TimmModel"
+    FREEZE_AT: 0 # Disable
+  WEIGHTS: "weightfolder://model_final_54b88a_backbone_stripped.pkl" # SwinB COCO head only
+  TIMMMODEL:
+    MODEL_NAME: 'vit_base_patch14_reg4_dinov2.lvd142m'
+    OUT_FEATURES: [8,9,10,11]
+    PRETRAINED: True # Handles loading DINOv2 pretrained backbone; main weights file contains only the head
+    FREEZE_MODEL: False
+    USE_IMAGE_SIZE: True
+    EXTRA_ARGS: # passed directly to timm.create_model. Model-specific.
+      dynamic_img_pad: True
+      dynamic_img_size: True
+  SEM_SEG_HEAD:
+    NAME: "MaskFormerHead"
+    IN_FEATURES: [8,9,10,11]
+    PIXEL_DECODER_NAME: "MSDeformAttnPixelDecoder"
+    DEFORMABLE_TRANSFORMER_ENCODER_IN_FEATURES: [9,10,11]
+OUTPUT_DIR: vit_b_dinov2_VIPER_300ep
+INPUT:
+  IMAGE_SIZE: 1024

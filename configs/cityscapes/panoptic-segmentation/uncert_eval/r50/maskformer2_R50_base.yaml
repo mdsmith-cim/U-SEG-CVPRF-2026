@@ -1,0 +1,26 @@
+_BASE_: ../../maskformer2_R50_bs16_90k.yaml
+MODEL:
+  META_ARCHITECTURE: "MaskFormerUncertainty"
+  WEIGHTS: "weightfolder://model_final_4ab90c.pkl" # From FB Model Zoo
+  SEM_SEG_HEAD:
+    NAME: "MaskFormerHeadUncertainty"
+  MASK_FORMER:
+    TRANSFORMER_DECODER_NAME: "MultiScaleMaskedTransformerDecoder"
+    TRANSFORMER_IN_FEATURE: "multi_scale_pixel_decoder"
+    DROPOUT: 0.0
+    TEST:
+      INSTANCE_ON: False
+SEED: -1
+TEST:
+  EVAL_PERIOD: 29750 # Every 10 epoch
+  EVALUATORS: ("PanopticQualityV3", "saveResults", "SemSegEvaluatorV2")
+SOLVER:
+  # Cityscapes has 2975 images in training set, 500 in val
+  # Original training of 90k steps -> 90k * 8 GPUs * batch 16 = 11520000 for 1 GPU, batch size 1
+  REFERENCE_WORLD_SIZE: 1 # num of gpus, this enables auto adjustment if more/less than 1
+  IMS_PER_BATCH: 1
+  BASE_LR: 0.0000125
+  MAX_ITER: 11520000 # Formula: (# images * # epochs / batch size)
+  # (yes, this means that 90k steps = 3872 epochs...)
+  CHECKPOINT_PERIOD: 29750 # Every 10 epochs
+OUTPUT_DIR: uncert_eval/maskformer2_cityscapes_R50_base

@@ -1,0 +1,32 @@
+_BASE_: maskformer2_vit-s_dinov2_bs1_300ep.yaml
+MODEL:
+  TIMMMODEL:
+    PRETRAINED: True # Handles loading DINOv2 pretrained backbone; main weights file contains only the head
+    FREEZE_MODEL: True
+    # We freeze all except the blocks.*.attn.qkv modules
+    THAW_SELECTED: [ 'model.blocks.0.attn.qkv',
+                     'model.blocks.1.attn.qkv',
+                     'model.blocks.2.attn.qkv',
+                     'model.blocks.3.attn.qkv',
+                     'model.blocks.4.attn.qkv',
+                     'model.blocks.5.attn.qkv',
+                     'model.blocks.6.attn.qkv',
+                     'model.blocks.7.attn.qkv',
+                     'model.blocks.8.attn.qkv',
+                     'model.blocks.9.attn.qkv',
+                     'model.blocks.10.attn.qkv',
+                     'model.blocks.11.attn.qkv',
+                     'model.blocks.0.attn.proj',
+                     'model.blocks.1.attn.proj',
+                     'model.blocks.2.attn.proj',
+                     'model.blocks.3.attn.proj',
+                     'model.blocks.4.attn.proj',
+                     'model.blocks.5.attn.proj',
+                     'model.blocks.6.attn.proj',
+                     'model.blocks.7.attn.proj',
+                     'model.blocks.8.attn.proj',
+                     'model.blocks.9.attn.proj',
+                     'model.blocks.10.attn.proj',
+                     'model.blocks.11.attn.proj' ]
+OUTPUT_DIR: vit_s_dinov2_VIPER_300ep_thawqkvandproj
+

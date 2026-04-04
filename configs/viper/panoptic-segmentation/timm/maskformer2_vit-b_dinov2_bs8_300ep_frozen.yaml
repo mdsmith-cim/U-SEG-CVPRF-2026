@@ -1,0 +1,12 @@
+_BASE_: maskformer2_vit-b_dinov2_bs5_300ep.yaml
+MODEL:
+  TIMMMODEL:
+    FREEZE_MODEL: True
+SOLVER:
+  IMS_PER_BATCH: 8
+  # VIPER has 13367 images in training set, 4959 in val
+  MAX_ITER: 501263 # 300 epochs (# images * # epochs / batch size)
+  CHECKPOINT_PERIOD: 16709 # Every 10 epochs
+TEST:
+  EVAL_PERIOD: 16709 # Every 10 epoch
+OUTPUT_DIR: vit_b_dinov2_VIPER_300ep_frozen

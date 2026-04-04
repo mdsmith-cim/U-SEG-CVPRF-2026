@@ -1,0 +1,25 @@
+_BASE_: ../../maskformer2_R50_base.yaml
+MODEL:
+  BACKBONE:
+    NAME: "D2TimmModel"
+    FREEZE_AT: 0 # Disable
+  WEIGHTS: "weightfolder://model_final_VIPER_vit-b_dinov2_300ep.pth"
+  MASK_FORMER:
+    DROPOUT: 0.0
+  TIMMMODEL:
+    MODEL_NAME: 'vit_base_patch14_reg4_dinov2.lvd142m'
+    OUT_FEATURES: [ 8,9,10,11 ]
+    PRETRAINED: False # Weights already loaded
+    FREEZE_MODEL: False
+    USE_IMAGE_SIZE: True
+    EXTRA_ARGS: # passed directly to timm.create_model. Model-specific.
+      dynamic_img_pad: True
+      dynamic_img_size: True
+  SEM_SEG_HEAD:
+    NAME: "MaskFormerHead"
+    IN_FEATURES: [ 8,9,10,11 ]
+    PIXEL_DECODER_NAME: "MSDeformAttnPixelDecoder"
+    DEFORMABLE_TRANSFORMER_ENCODER_IN_FEATURES: [ 9,10,11 ]
+INPUT:
+  IMAGE_SIZE: 1024
+OUTPUT_DIR: uncert_eval/maskformer2_cityscapes_VIPERformat_dinov2-vitb_base

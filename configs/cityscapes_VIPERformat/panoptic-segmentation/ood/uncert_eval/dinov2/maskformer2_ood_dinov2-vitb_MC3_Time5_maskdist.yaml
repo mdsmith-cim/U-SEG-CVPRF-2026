@@ -1,0 +1,20 @@
+_BASE_: maskformer2_ood_dinov2-vitb_base.yaml
+MODEL:
+  MASK_FORMER:
+    DROPOUT: 0.1
+    UNCERTAINTY:
+      SEMANTIC_AGGREGATION_METHOD: 'mask_dist'
+      INSTANCE_AGGREGATION_METHOD: 'mask_dist'
+      PANOPTIC_AGGREGATION_METHOD: 'mask_dist'
+      MC_DROPOUT_ENABLED: True
+      MC_DROPOUT_SAMPLES: 3
+      AGGREGATION_OVERLAP_THRESHOLD: 0.2
+      AGGREGATION_VOTE_THRESHOLD: 0.8
+      TTA_ENABLED: False
+      TTA_TRANSFORMS: ("horizontalFlip",)
+      TIMESERIES_NUM_PREV_FRAMES: 5
+INPUT:
+  TEST_DATASET_MAPPER_NAME: "timeseries_panoptic"
+DATASETS:
+  TEST: ("cityscapes_VIPER_format_val_panoptic_with_semseg_time_with_ood",)
+OUTPUT_DIR: uncert_eval/maskformer2_cityscapesOOD_VIPERformat_dinov2-vitb_MC3_Time5_mask_dist

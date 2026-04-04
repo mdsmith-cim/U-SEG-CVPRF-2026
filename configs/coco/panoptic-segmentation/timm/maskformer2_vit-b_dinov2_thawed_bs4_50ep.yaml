@@ -1,0 +1,8 @@
+_BASE_: maskformer2_vit-b_dinov2_thawed_bs1_50ep.yaml
+SOLVER:
+  IMS_PER_BATCH: 4
+  STEPS: (1330729, 1404659) #90%,95% learning rate decay
+  MAX_ITER: 1478588 # 50 epochs (118287 * # epochs / batch size)
+  CHECKPOINT_PERIOD: 147858 # Every 5 epochs
+TEST:
+  EVAL_PERIOD: 147858  # 5 epochs

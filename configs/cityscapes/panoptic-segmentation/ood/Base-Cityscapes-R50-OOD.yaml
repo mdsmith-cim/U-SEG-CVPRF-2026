@@ -1,0 +1,25 @@
+_BASE_: ../maskformer2_R50_bs16_90k.yaml
+DATASETS:
+  TEST: ("cityscapes_fine_panoptic_ood_val",)
+MODEL:
+  META_ARCHITECTURE: "MaskFormerUncertainty"
+  SEM_SEG_HEAD:
+    NAME: "MaskFormerHeadUncertainty"
+  WEIGHTS: "weightfolder://model_final_4ab90c.pkl" # Trained model on Cityscapes - R50
+  MASK_FORMER:
+    TEST:
+      INSTANCE_ON: False
+SOLVER:
+  # Cityscapes has 2975 images in training set, 500 in val
+  # OOD doubles val size to 1000 - normal and OOD copy of image are processed
+  # Original training of 90k steps -> 90k * 8 GPUs * batch 16 = 11520000 for 1 GPU, batch size 1
+  REFERENCE_WORLD_SIZE: 1 # num of gpus, this enables auto adjustment if more/less than 1
+  IMS_PER_BATCH: 1
+  BASE_LR: 0.0000125
+  MAX_ITER: 11520000 # Formula: (# images * # epochs / batch size)
+  # (yes, this means that 90k steps = 3872 epochs...)
+  CHECKPOINT_PERIOD: 29750 # Every 10 epochs
+TEST:
+  EVALUATORS: ("PanopticQualityV3", "saveResults", "SemSegEvaluatorV2")
+SEED: -1
+OUTPUT_DIR: maskformer2_R50_CityscapesOOD

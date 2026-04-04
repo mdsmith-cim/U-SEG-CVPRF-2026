@@ -1,0 +1,8 @@
+_BASE_: maskformer2_R50_bs1_300ep.yaml
+SOLVER:
+  IMS_PER_BATCH: 4
+  # VIPER has 13367 images in training set, 4959 in val
+  MAX_ITER: 1002525 # 300 epochs (# images * # epochs / batch size)
+  CHECKPOINT_PERIOD: 16708 # Every 5 epochs
+TEST:
+  EVAL_PERIOD: 16708 # Every 5 epoch

@@ -1,0 +1,5 @@
+_BASE_: maskformer2_vit-b_dinov2_bs1_90kequiv.yaml
+MODEL:
+  # Not pretraining the head did not go well.
+  WEIGHTS: "weightfolder://model_final_54b88a_backbone_stripped.pkl" # SwinB COCO head only
+OUTPUT_DIR: vit_b_dinov2_Cityscapes_90kequiv_pretrainSwinB

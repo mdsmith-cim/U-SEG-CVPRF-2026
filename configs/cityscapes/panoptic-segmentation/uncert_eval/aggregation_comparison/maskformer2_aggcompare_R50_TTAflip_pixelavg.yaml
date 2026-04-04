@@ -1,0 +1,16 @@
+_BASE_: ../r50/maskformer2_R50_base.yaml
+MODEL:
+  MASK_FORMER:
+    DROPOUT: 0.0
+    UNCERTAINTY:
+      SEMANTIC_AGGREGATION_METHOD: 'pixel_decoder_averaging'
+      INSTANCE_AGGREGATION_METHOD: 'pixel_decoder_averaging'
+      PANOPTIC_AGGREGATION_METHOD: 'pixel_decoder_averaging'
+      MC_DROPOUT_ENABLED: False
+      MC_DROPOUT_SAMPLES: 1
+      AGGREGATION_OVERLAP_THRESHOLD: 0.2
+      AGGREGATION_VOTE_THRESHOLD: 0.8
+      TTA_ENABLED: True
+      TTA_TRANSFORMS: ("horizontalFlip",)
+      TIMESERIES_NUM_PREV_FRAMES: 0
+OUTPUT_DIR: agg_uncert_eval/maskformer2_cityscapes_R50_TTAflip_pixel_decoder_averaging

@@ -1,0 +1,263 @@
+import json
+import logging
+import os
+from copy import deepcopy
+
+from detectron2.data import DatasetCatalog, MetadataCatalog
+from detectron2.data.datasets.builtin_meta import CITYSCAPES_CATEGORIES
+from detectron2.utils.file_io import PathManager
+
+"""
+This file contains functions to register a timeseries Cityscapes panoptic dataset to the DatasetCatalog.
+Modified from detectron2.data.datasets.cityscapes_panoptic
+"""
+
+logger = logging.getLogger(__name__)
+
+
+def get_cityscapes_panoptic_files(image_dir, gt_dir, seq_dir, fw_flow_dir, bw_flow_dir, json_info, ood_folder):
+    files = []
+    suffix = "_leftImg8bit.png"
+    flow_suffix = '_leftImg8bit.npz'
+
+    # scan through the directory
+    cities = PathManager.ls(image_dir)
+    logger.info(f"{len(cities)} cities found in '{image_dir}'.")
+    logger.info("Verifying sequence information for all cities. This may take a while...")
+    image_dict = {}
+    for city in cities:
+        city_img_dir = os.path.join(image_dir, city)
+        for basename in PathManager.ls(city_img_dir):
+            image_file = os.path.join(city_img_dir, basename)
+            ood_file = None
+            if ood_folder is not None:
+                ood_file = os.path.join(ood_folder, city, basename)
+                assert PathManager.exists(ood_file), f'OOD RGB file {ood_file} expected to exist!'
+
+            assert basename.endswith(suffix), basename
+            basename = os.path.basename(basename)[: -len(suffix)]
+
+            # Should be images going back 19 frames in sequence directory
+            city_str, seq_str, frame_str = basename.split('_')
+            seq_int, frame_int = int(seq_str), int(frame_str)
+            prev_files = []
+            if (seq_dir is not None) and (fw_flow_dir is not None) and (bw_flow_dir is not None):
+                seq_img_dir = os.path.join(seq_dir, city)
+                # Note that sequence directory also contains base image itself and we need it for backward flow hence +1
+                for prev_frame_int in range(frame_int - 19, frame_int + 1):
+                    prev_img_file = os.path.join(seq_img_dir, f'{city_str}_{seq_str}_{prev_frame_int:0>6}{suffix}')
+                    assert PathManager.exists(prev_img_file), f'Sequence image {prev_img_file} does not exist'
+
+                    bw_flow_file = None
+                    # No backward flow for first frame in a sequence - we set to None
+                    if prev_frame_int != frame_int - 19:
+                        bw_flow_file = os.path.join(bw_flow_dir, city_str, f'{city_str}_{seq_str}_{prev_frame_int:0>6}{flow_suffix}')
+                        assert PathManager.exists(bw_flow_file), f'Backward flow file {bw_flow_file} does not exist!'
+
+                    fw_flow_file = None
+                    if prev_frame_int != frame_int:
+                        fw_flow_file = os.path.join(fw_flow_dir, city_str, f'{city_str}_{seq_str}_{prev_frame_int:0>6}{flow_suffix}')
+                        assert PathManager.exists(fw_flow_file), f'Forward flow file {fw_flow_file} does not exist!'
+                    prev_files.append((prev_img_file, bw_flow_file, fw_flow_file))
+
+            image_dict[basename] = (image_file, ood_file, prev_files)
+
+    for ann in json_info["annotations"]:
+        try:
+            image_file, ood_file, prev_files = image_dict.get(ann["image_id"], None)
+        except KeyError as e:
+            raise FileNotFoundError(f"No image file for ID {ann['image_id']} (file {ann['file_name']}) found!") from e
+
+        label_file = os.path.join(gt_dir, ann["file_name"])
+        segments_info = ann["segments_info"]
+
+        assert PathManager.exists(image_file), f'Image file {image_file} does not exist!'
+        assert PathManager.exists(label_file), f'Label file {label_file} does not exist!'
+
+        files.append((image_file, ood_file, prev_files, label_file, segments_info))
+
+    assert len(files), "No images found in {}".format(image_dir)
+    return files
+
+
+def prev_files_json(prev_files):
+    # Converts list(tuple) to list(dict) for later use in data loaders
+    # Order is ascending e.g. frame immediately prior to current image is [-1], frame furthest back in time is [0]
+    return [{'file_name': i[0],
+             'bw_flow_file_name': i[1],
+             'fw_flow_file_name': i[2]}
+            for i in prev_files]
+
+def load_cityscapes_panoptic(image_dir, gt_dir, gt_json, seq_dir, fw_flow_dir, bw_flow_dir, meta, ood_folder=None):
+    """
+    Args:
+        image_dir (str): path to the raw dataset. e.g., "~/cityscapes/leftImg8bit/train".
+        gt_dir (str): path to the raw annotations. e.g.,
+            "~/cityscapes/gtFine/cityscapes_panoptic_train".
+        gt_json (str): path to the json file. e.g.,
+            "~/cityscapes/gtFine/cityscapes_panoptic_train.json".
+        seq_dir (str): path to a folder containing RGB image sequences e.g. from leftImg8bit_sequence_trainvaltest.zip
+        (Note: run datasets/delete_future_cityscapes_seq_images.py first)
+        fw_flow_dir (str): path to folder containing forward optical flow created by datasets/generate_optical_flow_cityscapes.pu
+        bw_flow_dir (str): same as fw_flow_dir except backward optical flow
+        ood_folder (str): path to folder containing Out-of-distribution versions of standard cityscapes RGB images from Panoptic Out-of-Distribution Segmentation, Mohan et al.
+        meta (dict): dictionary containing "thing_dataset_id_to_contiguous_id"
+            and "stuff_dataset_id_to_contiguous_id" to map category ids to
+            contiguous ids for training.
+
+    Returns:
+        list[dict]: a list of dicts in Detectron2 standard format. (See
+        `Using Custom Datasets </tutorials/datasets.html>`_ )
+    """
+
+    def _convert_category_id(segment_info, meta):
+        if segment_info["category_id"] in meta["thing_dataset_id_to_contiguous_id"]:
+            segment_info["category_id"] = meta["thing_dataset_id_to_contiguous_id"][
+                segment_info["category_id"]
+            ]
+        else:
+            segment_info["category_id"] = meta["stuff_dataset_id_to_contiguous_id"][
+                segment_info["category_id"]
+            ]
+        return segment_info
+
+    assert os.path.exists(
+        gt_json
+    ), "Please run `python cityscapesscripts/preparation/createPanopticImgs.py` to generate label files."  # noqa
+    with open(gt_json) as f:
+        json_info = json.load(f)
+    files = get_cityscapes_panoptic_files(image_dir, gt_dir, seq_dir, fw_flow_dir, bw_flow_dir, json_info, ood_folder)
+    ret = []
+    for image_file, ood_file, prev_files, label_file, segments_info in files:
+        sem_label_file = os.path.splitext(image_file.replace("leftImg8bit", "gtFine"))[0]  + "_labelTrainIds.png"
+        segments_info = [_convert_category_id(x, meta) for x in segments_info]
+        entry =             {
+                "file_name": image_file,
+                "is_ood": False,
+                "image_id": "_".join(
+                    os.path.splitext(os.path.basename(image_file))[0].split("_")[:3]
+                ),
+                "sem_seg_file_name": sem_label_file,
+                "pan_seg_file_name": label_file,
+                "segments_info": segments_info,
+                "prev_frame_data": prev_files_json(prev_files),
+            }
+        ret.append(entry)
+        # Case of OOD dataset; add OOD image
+        # Segmentation data will not be correct for OOD regions but that is not how it will be evaluated
+        if ood_file is not None:
+            entry = deepcopy(entry)
+            entry["is_ood"] = True
+            entry["file_name"] = ood_file
+            ret.append(entry)
+    assert len(ret), f"No images found in {image_dir}!"
+    assert PathManager.isfile(
+        ret[0]["sem_seg_file_name"]
+    ), "Please generate labelTrainIds.png with cityscapesscripts/preparation/createTrainIdLabelImgs.py"  # noqa
+    assert PathManager.isfile(
+        ret[0]["pan_seg_file_name"]
+    ), "Please generate panoptic annotation with python cityscapesscripts/preparation/createPanopticImgs.py"  # noqa
+    return ret
+
+_RAW_CITYSCAPES_PANOPTIC_SPLITS = {
+    "cityscapes_fine_panoptic_timeseries_val": (
+        "cityscapes/leftImg8bit/val",
+        "cityscapes/gtFine/cityscapes_panoptic_val",
+        "cityscapes/gtFine/cityscapes_panoptic_val.json",
+        "cityscapes/leftImg8bit_sequence/val", # Sequence folder
+        "cityscapes/optflow_fw/val", # Forward optical flow
+        "cityscapes/optflow_bw/val", # Backward optical flow
+        None # OOD Image directory
+    ),
+    "cityscapes_fine_panoptic_ood_val": (
+        "cityscapes/leftImg8bit/val",
+        "cityscapes/gtFine/cityscapes_panoptic_val",
+        "cityscapes/gtFine/cityscapes_panoptic_val.json",
+        None, # Sequence folder
+        None, # Forward optical flow
+        None, # Backward optical flow
+        "cityscapes/leftImg8bit_ood/val"  # OOD Image directory
+    ),
+    "cityscapes_fine_panoptic_ood_timeseries_val": (
+        "cityscapes/leftImg8bit/val",
+        "cityscapes/gtFine/cityscapes_panoptic_val",
+        "cityscapes/gtFine/cityscapes_panoptic_val.json",
+        "cityscapes/leftImg8bit_sequence/val",  # Sequence folder
+        "cityscapes/optflow_fw/val",  # Forward optical flow
+        "cityscapes/optflow_bw/val",  # Backward optical flow
+        "cityscapes/leftImg8bit_ood/val" # OOD Image directory
+    ),
+}
+
+
+def register_all_cityscapes_panoptic(root):
+    meta = {}
+    # The following metadata maps contiguous id from [0, #thing categories +
+    # #stuff categories) to their names and colors. We have to replica of the
+    # same name and color under "thing_*" and "stuff_*" because the current
+    # visualization function in D2 handles thing and class classes differently
+    # due to some heuristic used in Panoptic FPN. We keep the same naming to
+    # enable reusing existing visualization functions.
+    thing_classes = [k["name"] for k in CITYSCAPES_CATEGORIES]
+    thing_colors = [k["color"] for k in CITYSCAPES_CATEGORIES]
+    stuff_classes = [k["name"] for k in CITYSCAPES_CATEGORIES]
+    stuff_colors = [k["color"] for k in CITYSCAPES_CATEGORIES]
+
+    meta["thing_classes"] = thing_classes
+    meta["thing_colors"] = thing_colors
+    meta["stuff_classes"] = stuff_classes
+    meta["stuff_colors"] = stuff_colors
+
+    # There are three types of ids in cityscapes panoptic segmentation:
+    # (1) category id: like semantic segmentation, it is the class id for each
+    #   pixel. Since there are some classes not used in evaluation, the category
+    #   id is not always contiguous and thus we have two set of category ids:
+    #       - original category id: category id in the original dataset, mainly
+    #           used for evaluation.
+    #       - contiguous category id: [0, #classes), in order to train the classifier
+    # (2) instance id: this id is used to differentiate different instances from
+    #   the same category. For "stuff" classes, the instance id is always 0; for
+    #   "thing" classes, the instance id starts from 1 and 0 is reserved for
+    #   ignored instances (e.g. crowd annotation).
+    # (3) panoptic id: this is the compact id that encode both category and
+    #   instance id by: category_id * 1000 + instance_id.
+    thing_dataset_id_to_contiguous_id = {}
+    stuff_dataset_id_to_contiguous_id = {}
+
+    for k in CITYSCAPES_CATEGORIES:
+        if k["isthing"] == 1:
+            thing_dataset_id_to_contiguous_id[k["id"]] = k["trainId"]
+        stuff_dataset_id_to_contiguous_id[k["id"]] = k["trainId"]
+
+    meta["thing_dataset_id_to_contiguous_id"] = thing_dataset_id_to_contiguous_id
+    meta["stuff_dataset_id_to_contiguous_id"] = stuff_dataset_id_to_contiguous_id
+
+    for key, (image_dir, gt_dir, gt_json, seq_folder, fw_flow_folder, bw_flow_folder, ood_folder) in _RAW_CITYSCAPES_PANOPTIC_SPLITS.items():
+        image_dir = os.path.join(root, image_dir)
+        gt_dir = os.path.join(root, gt_dir)
+        gt_json = os.path.join(root, gt_json)
+        if seq_folder is not None:
+            seq_folder = os.path.join(root, seq_folder)
+        if fw_flow_folder is not None:
+            fw_flow_folder = os.path.join(root, fw_flow_folder)
+        if bw_flow_folder is not None:
+            bw_flow_folder = os.path.join(root, bw_flow_folder)
+        if ood_folder is not None:
+            ood_folder = os.path.join(root, ood_folder)
+
+        DatasetCatalog.register(key, lambda a=image_dir, b=gt_dir, c=gt_json, d=seq_folder, e=fw_flow_folder, f=bw_flow_folder, g=ood_folder : load_cityscapes_panoptic(a, b, c, d, e, f, meta, g))
+
+        MetadataCatalog.get(key).set(
+            panoptic_root=gt_dir,
+            ood_img_root=ood_folder,
+            image_root=image_dir,
+            panoptic_json=gt_json,
+            gt_dir=gt_dir.replace("cityscapes_panoptic_", ""),
+            evaluator_type="cityscapes_panoptic_seg",
+            ignore_label=255,
+            label_divisor=1000,
+            **meta,
+        )
+
+_root = os.path.expanduser(os.getenv("DETECTRON2_DATASETS", "datasets"))
+register_all_cityscapes_panoptic(_root)

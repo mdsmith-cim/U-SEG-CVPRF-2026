@@ -1,0 +1,31 @@
+_BASE_: ../maskformer2_R50_bs16_50ep.yaml
+MODEL:
+  BACKBONE:
+    NAME: "D2TimmModel"
+  WEIGHTS: "weightfolder://model_final_54b88a_backbone_stripped.pkl" # SwinB COCO head only
+  TIMMMODEL:
+    MODEL_NAME: 'vit_base_patch14_reg4_dinov2.lvd142m'
+    OUT_FEATURES: [8,9,10,11]
+    PRETRAINED: True # Handles loading DINOv2 pretrained backbone; other weights have had backbone stripped
+    FREEZE_MODEL: True
+    USE_IMAGE_SIZE: True
+    EXTRA_ARGS: # passed directly to timm.create_model. Model-specific.
+      dynamic_img_pad: True
+      dynamic_img_size: True
+  SEM_SEG_HEAD:
+    IN_FEATURES: [8,9,10,11]
+    DEFORMABLE_TRANSFORMER_ENCODER_IN_FEATURES: [9,10,11]
+  MASK_FORMER:
+    TEST:
+      SEMANTIC_ON: True
+      INSTANCE_ON: False
+SOLVER:
+  BASE_LR: 0.0000125
+  REFERENCE_WORLD_SIZE: 1 # num of gpus, this enables auto adjustment if more/less than 1
+  IMS_PER_BATCH: 8
+  STEPS: (665364, 702329) #90%,95% learning rate decay
+  MAX_ITER: 739294 # 50 epochs (118287 * 50 / 8)
+  CHECKPOINT_PERIOD: 29572 # every 2 epochs
+OUTPUT_DIR: dinov2_frozen_50ep
+TEST:
+  EVAL_PERIOD: 29572 # every 2 epochs

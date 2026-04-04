@@ -1,0 +1,93 @@
+MODEL:
+  META_ARCHITECTURE: "MaskFormer"
+  PIXEL_MEAN: [ 123.675, 116.280, 103.530 ]
+  PIXEL_STD: [ 58.395, 57.120, 57.375 ]
+  BACKBONE:
+    NAME: "D2TimmModel"
+    FREEZE_AT: 0 # Disable
+  WEIGHTS: "weightfolder://model_final_94dc52_backbone_stripped.pkl" # Load R50 model with backbone removed
+  TIMMMODEL:
+    MODEL_NAME: 'vit_base_patch14_reg4_dinov2.lvd142m'
+    OUT_FEATURES: [8,9,10,11]
+    PRETRAINED: True # Handles loading DINOv2 pretrained backbone; other weights have had backbone stripped
+    FREEZE_MODEL: False
+    USE_IMAGE_SIZE: True
+    EXTRA_ARGS: # passed directly to timm.create_model. Model-specific.
+      dynamic_img_pad: True
+      dynamic_img_size: True
+  SEM_SEG_HEAD:
+    NAME: "MaskFormerHead"
+    IN_FEATURES: [8,9,10,11]
+    IGNORE_VALUE: 255
+    NUM_CLASSES: 133
+    LOSS_WEIGHT: 1.0
+    CONVS_DIM: 256
+    MASK_DIM: 256
+    NORM: "GN"
+    # pixel decoder
+    PIXEL_DECODER_NAME: "MSDeformAttnPixelDecoder"
+    DEFORMABLE_TRANSFORMER_ENCODER_IN_FEATURES: [9,10,11]
+    COMMON_STRIDE: 4
+    TRANSFORMER_ENC_LAYERS: 6
+  MASK_FORMER:
+    TRANSFORMER_DECODER_NAME: "MultiScaleMaskedTransformerDecoder"
+    TRANSFORMER_IN_FEATURE: "multi_scale_pixel_decoder"
+    DEEP_SUPERVISION: True
+    NO_OBJECT_WEIGHT: 0.1
+    CLASS_WEIGHT: 2.0
+    MASK_WEIGHT: 5.0
+    DICE_WEIGHT: 5.0
+    HIDDEN_DIM: 256
+    NUM_OBJECT_QUERIES: 100
+    NHEADS: 8
+    DROPOUT: 0.0
+    DIM_FEEDFORWARD: 2048
+    ENC_LAYERS: 0
+    PRE_NORM: False
+    ENFORCE_INPUT_PROJ: False
+    SIZE_DIVISIBILITY: 32
+    DEC_LAYERS: 10  # 9 decoder layers, add one for the loss on learnable query
+    TRAIN_NUM_POINTS: 12544
+    OVERSAMPLE_RATIO: 3.0
+    IMPORTANCE_SAMPLE_RATIO: 0.75
+    TEST:
+      SEMANTIC_ON: True
+      PANOPTIC_ON: True
+      INSTANCE_ON: False
+      OVERLAP_THRESHOLD: 0.8
+      OBJECT_MASK_THRESHOLD: 0.8
+DATASETS:
+  TRAIN: ("coco_2017_train_panoptic",)
+  TEST: ("coco_2017_val_panoptic_with_sem_seg",)  # to evaluate instance and semantic performance as well
+SOLVER:
+  REFERENCE_WORLD_SIZE: 1 # num of gpus, this enables auto adjustment if more/less than 1
+  IMS_PER_BATCH: 1
+  STEPS: (5322915, 5618633) #90%,95% learning rate decay
+  MAX_ITER: 5914350 # 50 epochs (118287 * # epochs / batch size)
+  BASE_LR: 0.0000125
+  WARMUP_FACTOR: 1.0
+  WARMUP_ITERS: 10
+  WEIGHT_DECAY: 0.05
+  OPTIMIZER: "ADAMW"
+  BACKBONE_MULTIPLIER: 0.1
+  CHECKPOINT_PERIOD: 591435
+  CLIP_GRADIENTS:
+    ENABLED: True
+    CLIP_TYPE: "full_model"
+    CLIP_VALUE: 0.01
+    NORM_TYPE: 2.0
+  AMP:
+    ENABLED: True
+OUTPUT_DIR: dinov2_vit-b_thawed_50ep
+INPUT:
+  IMAGE_SIZE: 800 # Trying to get away with a little smaller input size, Transformer models are rather large in memory
+  MIN_SCALE: 0.1
+  MAX_SCALE: 2.0
+  FORMAT: "RGB"
+  DATASET_MAPPER_NAME: "coco_panoptic_lsj"
+TEST:
+  EVAL_PERIOD: 591435  # 5 epochs
+DATALOADER:
+  FILTER_EMPTY_ANNOTATIONS: True
+  NUM_WORKERS: 4
+VERSION: 2

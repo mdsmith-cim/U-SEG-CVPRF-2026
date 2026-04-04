@@ -1,0 +1,6 @@
+_BASE_: ../../Base-CityscapesVIPER-R50-OOD.yaml
+MODEL:
+  WEIGHTS: "weightfolder://model_final_VIPER_R50_300ep.pth" # Trained VIPER model
+  MASK_FORMER:
+    DROPOUT: 0.0
+OUTPUT_DIR: uncert_eval/maskformer2_cityscapesOOD_VIPERformat_VIPERformat_R50_base

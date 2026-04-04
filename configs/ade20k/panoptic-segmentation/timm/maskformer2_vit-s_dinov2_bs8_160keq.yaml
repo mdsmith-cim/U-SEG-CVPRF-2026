@@ -1,0 +1,10 @@
+_BASE_: maskformer2_vit-s_dinov2_bs1_160keq.yaml
+
+SOLVER:
+  IMS_PER_BATCH: 8 # Fits on V100 16GB
+  # 160k steps for 8 GPU / BS 16 = 20480000 steps for BS 1 / 1 GPU
+  # ADE20K has 20210 images train/2000 val
+  MAX_ITER: 2560000 # ~1000 epochs (# images * # epochs / batch size)
+  CHECKPOINT_PERIOD: 12631 # Every 5 epochs
+TEST:
+  EVAL_PERIOD: 12631 # Every 5 epoch

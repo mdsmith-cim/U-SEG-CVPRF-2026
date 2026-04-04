@@ -1,0 +1,36 @@
+_BASE_: ../maskformer2_R50_bs1_300ep.yaml
+MODEL:
+  BACKBONE:
+    NAME: "D2TimmModel"
+    FREEZE_AT: 0 # Disable
+  WEIGHTS: "weightfolder://model_final_54b88a_backbone_stripped.pkl" # SwinB COCO head only
+  TIMMMODEL:
+    MODEL_NAME: 'vit_small_patch14_reg4_dinov2.lvd142m'
+    OUT_FEATURES: [8,9,10,11]
+    PRETRAINED: True # Handles loading DINOv2 pretrained backbone; main weights file contains only the head
+    FREEZE_MODEL: False
+    USE_IMAGE_SIZE: False
+    EXTRA_ARGS: # passed directly to timm.create_model. Model-specific.
+      dynamic_img_pad: False
+      dynamic_img_size: True
+  SEM_SEG_HEAD:
+    NAME: "MaskFormerHead"
+    IN_FEATURES: [8,9,10,11]
+    PIXEL_DECODER_NAME: "MSDeformAttnPixelDecoder"
+    DEFORMABLE_TRANSFORMER_ENCODER_IN_FEATURES: [9,10,11]
+  MASK_FORMER:
+    SIZE_DIVISIBILITY: 14 # Patch size of DINOv2 model
+OUTPUT_DIR: vit_s_dinov2_VIPER_300ep
+INPUT:
+  IMAGE_SIZE: 518 # Train mapper
+  MIN_SIZE_TEST: 518 # Test mapper
+  MAX_SIZE_TEST: 518 # Test mapper
+  CROP: # Test mapper
+    ENABLED: True
+    TYPE: "absolute"
+    SIZE: (518, 518)
+    SINGLE_CATEGORY_MAX_AREA: 1.0
+  COLOR_AUG_SSD: True
+  SIZE_DIVISIBILITY: -1
+  FORMAT: "RGB"
+  DATASET_MAPPER_NAME: "coco_panoptic_lsj"

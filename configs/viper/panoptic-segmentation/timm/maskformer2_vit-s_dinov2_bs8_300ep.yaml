@@ -1,0 +1,9 @@
+_BASE_: maskformer2_vit-s_dinov2_bs1_300ep.yaml
+SOLVER:
+  IMS_PER_BATCH: 8
+  # VIPER has 13367 images in training set, 4959 in val
+  MAX_ITER: 501263 # 300 epochs (# images * # epochs / batch size)
+  CHECKPOINT_PERIOD: 16709 # Every 10 epochs
+OUTPUT_DIR: vit_s_dinov2_VIPER_300ep
+TEST:
+  EVAL_PERIOD: 16709 # Every 10 epoch

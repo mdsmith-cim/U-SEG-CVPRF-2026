@@ -1,0 +1,28 @@
+_BASE_: ../../Base-PanopticSegmentation.yaml
+MODEL:
+  BACKBONE:
+    NAME: "D2TimmModel"
+    FREEZE_AT: 0 # Disable
+  TIMMMODEL:
+    MODEL_NAME: 'vit_base_patch14_reg4_dinov2.lvd142m'
+    OUT_FEATURES: [ 8,9,10,11 ]
+    PRETRAINED: False # Model weights loaded below
+    FREEZE_MODEL: False
+    USE_IMAGE_SIZE: True
+    EXTRA_ARGS: # passed directly to timm.create_model. Model-specific.
+      dynamic_img_pad: True
+      dynamic_img_size: True
+  META_ARCHITECTURE: "MaskFormerUncertainty"
+  WEIGHTS: "weightfolder://model_final_cityscapes_vit-b_dinov2_90kequiv.pth"
+  SEM_SEG_HEAD:
+    NAME: "MaskFormerHeadUncertainty"
+    IN_FEATURES: [ 8,9,10,11 ]
+    DEFORMABLE_TRANSFORMER_ENCODER_IN_FEATURES: [ 9,10,11 ]
+  MASK_FORMER:
+    DROPOUT: 0.0
+SEED: -1
+TEST:
+  EVALUATORS: ("PanopticQualityV3", "saveResults", "SemSegEvaluatorV2")
+INPUT:
+  IMAGE_SIZE: 1024
+OUTPUT_DIR: uncert_eval/maskformer2_VIPER_cityscapesformat_dinov2-vitb_base

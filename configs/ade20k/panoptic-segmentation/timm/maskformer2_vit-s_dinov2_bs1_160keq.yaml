@@ -1,0 +1,33 @@
+_BASE_: ../maskformer2_R50_bs16_160k.yaml
+MODEL:
+  BACKBONE:
+    NAME: "D2TimmModel"
+    FREEZE_AT: 0 # Disable
+  WEIGHTS: "weightfolder://model_final_54b88a_backbone_stripped.pkl" # SwinB COCO head only
+  TIMMMODEL:
+    MODEL_NAME: 'vit_small_patch14_reg4_dinov2.lvd142m'
+    OUT_FEATURES: [8,9,10,11]
+    PRETRAINED: True # Handles loading DINOv2 pretrained backbone; main weights file contains only the head
+    FREEZE_MODEL: False
+    USE_IMAGE_SIZE: True
+    EXTRA_ARGS: # passed directly to timm.create_model. Model-specific.
+      dynamic_img_pad: False
+      dynamic_img_size: True
+  SEM_SEG_HEAD:
+    NAME: "MaskFormerHead"
+    IN_FEATURES: [8,9,10,11]
+    PIXEL_DECODER_NAME: "MSDeformAttnPixelDecoder"
+    DEFORMABLE_TRANSFORMER_ENCODER_IN_FEATURES: [9,10,11]
+  MASK_FORMER:
+    SIZE_DIVISIBILITY: 14 # Patch size of DINOv2 model
+OUTPUT_DIR: vit_s_dinov2_ade20k_160kequiv
+SOLVER:
+  REFERENCE_WORLD_SIZE: 1 # num of gpus, this enables auto adjustment if more/less than 1
+  IMS_PER_BATCH: 1
+  # 160k steps for 8 GPU / BS 16 = 20480000 steps for BS 1 / 1 GPU
+  # ADE20K has 20210 images train/2000 val
+  MAX_ITER: 20480000 # ~1000 epochs (# images * # epochs / batch size)
+  CHECKPOINT_PERIOD: 101050 # Every 5 epochs
+  BASE_LR: 0.0000125
+TEST:
+  EVAL_PERIOD: 101050 # Every 5 epoch

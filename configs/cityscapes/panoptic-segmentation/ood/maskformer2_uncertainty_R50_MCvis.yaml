@@ -1,0 +1,35 @@
+_BASE_: maskformer2_R50_bs16_90k.yaml
+MODEL:
+  META_ARCHITECTURE: "MaskFormerUncertainty"
+  SEM_SEG_HEAD:
+    NAME: "MaskFormerHeadUncertainty"
+  MASK_FORMER:
+    TRANSFORMER_DECODER_NAME: "MultiScaleMaskedTransformerDecoder"
+    TRANSFORMER_IN_FEATURE: "multi_scale_pixel_decoder"
+    DROPOUT: 0.1
+#    DROPOUT: 0.0
+    TEST:
+      SEMANTIC_ON: True
+      INSTANCE_ON: False
+      PANOPTIC_ON: True
+    UNCERTAINTY:
+#      SEMANTIC_AGGREGATION_METHOD: 'pixel_decoder_averaging'
+#      PANOPTIC_AGGREGATION_METHOD: 'pixel_decoder_averaging'
+#      INSTANCE_AGGREGATION_METHOD: 'pixel_decoder_averaging'
+#      SEMANTIC_AGGREGATION_METHOD: 'averaging'
+#      INSTANCE_AGGREGATION_METHOD: 'averaging'
+#      PANOPTIC_AGGREGATION_METHOD: 'averaging'
+      SEMANTIC_AGGREGATION_METHOD: 'mask_dist'
+      PANOPTIC_AGGREGATION_METHOD: 'mask_dist'
+      INSTANCE_AGGREGATION_METHOD: 'mask_dist'
+      MC_DROPOUT_ENABLED: True
+      MC_DROPOUT_SAMPLES: 3
+      AGGREGATION_OVERLAP_THRESHOLD: 0.2
+      AGGREGATION_VOTE_THRESHOLD: 0.8
+      TTA_ENABLED: False
+      TTA_TRANSFORMS: ("horizontalFlip",)
+      TIMESERIES_NUM_PREV_FRAMES: 0
+SEED: 98532
+TEST:
+  EVALUATORS: ("SemSegEvaluatorV2", "PanopticQualityV3", "saveVisualizations")
+OUTPUT_DIR: maskformer2_R50_CityscapesOOD_MC3

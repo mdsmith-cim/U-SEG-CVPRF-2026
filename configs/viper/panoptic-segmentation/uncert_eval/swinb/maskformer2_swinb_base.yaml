@@ -1,0 +1,14 @@
+_BASE_: ../../swin/maskformer2_swin_base_384_bs1_300ep.yaml
+MODEL:
+  META_ARCHITECTURE: "MaskFormerUncertainty"
+  WEIGHTS: "weightfolder://model_final_VIPER_swinB_300ep.pth"
+  SEM_SEG_HEAD:
+    NAME: "MaskFormerHeadUncertainty"
+  MASK_FORMER:
+    TRANSFORMER_DECODER_NAME: "MultiScaleMaskedTransformerDecoder"
+    TRANSFORMER_IN_FEATURE: "multi_scale_pixel_decoder"
+    DROPOUT: 0.0
+SEED: -1
+TEST:
+  EVALUATORS: ("PanopticQualityV3", "saveResults", "SemSegEvaluatorV2")
+OUTPUT_DIR: uncert_eval/maskformer2_VIPER_swinb_base

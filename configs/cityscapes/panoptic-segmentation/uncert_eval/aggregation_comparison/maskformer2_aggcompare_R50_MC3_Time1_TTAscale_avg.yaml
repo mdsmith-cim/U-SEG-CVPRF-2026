@@ -1,0 +1,20 @@
+_BASE_: ../r50/maskformer2_R50_base.yaml
+MODEL:
+  MASK_FORMER:
+    DROPOUT: 0.1
+    UNCERTAINTY:
+      SEMANTIC_AGGREGATION_METHOD: 'averaging'
+      INSTANCE_AGGREGATION_METHOD: 'averaging'
+      PANOPTIC_AGGREGATION_METHOD: 'averaging'
+      MC_DROPOUT_ENABLED: True
+      MC_DROPOUT_SAMPLES: 3
+      AGGREGATION_OVERLAP_THRESHOLD: 0.2
+      AGGREGATION_VOTE_THRESHOLD: 0.8
+      TTA_ENABLED: True
+      TTA_TRANSFORMS: ("scale",)
+      TIMESERIES_NUM_PREV_FRAMES: 1
+INPUT:
+  TEST_DATASET_MAPPER_NAME: "timeseries_panoptic"
+DATASETS:
+  TEST: ("cityscapes_fine_panoptic_timeseries_val",)
+OUTPUT_DIR: agg_uncert_eval/maskformer2_cityscapes_R50_MC3_Time1_TTAscale_averaging

@@ -1,0 +1,32 @@
+_BASE_: ../maskformer2_R50_bs16_50ep.yaml
+MODEL:
+  BACKBONE:
+    NAME: "D2TimmModel"
+  WEIGHTS: "" #With pretrained=True timm handles loading backbone weights
+  # HOWEVER, need to try using timm weights for backbone and something pretrained for mask2former head so all we need to do is finetune
+  # head to new backbone
+  TIMMMODEL:
+    MODEL_NAME: 'vit_intern300m_patch14_448'
+    OUT_FEATURES: [0,1,2,3]
+    PRETRAINED: True
+    FREEZE_MODEL: False
+    USE_IMAGE_SIZE: True
+    EXTRA_ARGS: # passed directly to timm.create_model. Model-specific.
+      dynamic_img_pad: True
+      dynamic_img_size: True
+  SEM_SEG_HEAD:
+    IN_FEATURES: [0,1,2,3]
+    DEFORMABLE_TRANSFORMER_ENCODER_IN_FEATURES: [1,2,3]
+  MASK_FORMER:
+    TEST:
+      SEMANTIC_ON: False
+      INSTANCE_ON: False
+SOLVER:
+  IMS_PER_BATCH: 32
+  STEPS: (166340, 175581) #90%,95% learning rate decay
+  MAX_ITER: 184823 # 50 epochs (118287 * 150 / 32)
+OUTPUT_DIR: timm_vit_intern
+INPUT:
+  IMAGE_SIZE: 448 # model seems to be very constrained on image size, not sure what exact constraints are
+TEST:
+  EVAL_PERIOD: 10000

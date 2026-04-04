@@ -1,0 +1,29 @@
+_BASE_: ../maskformer2_R50_bs16_50ep.yaml
+MODEL:
+  BACKBONE:
+    NAME: "D2TimmModel"
+  WEIGHTS: "" #Head left untrained, with pretrained=True timm handles loading backbone weights
+  TIMMMODEL:
+    MODEL_NAME: 'mvitv2_large.fb_in1k'
+    OUT_FEATURES: [0,1,2,3]
+    PRETRAINED: True
+    USE_IMAGE_SIZE: True
+    FREEZE_MODEL: False
+  SEM_SEG_HEAD:
+    IN_FEATURES: [0,1,2,3]
+    DEFORMABLE_TRANSFORMER_ENCODER_IN_FEATURES: [1,2,3]
+  MASK_FORMER:
+    TEST:
+      SEMANTIC_ON: False
+      INSTANCE_ON: False
+SOLVER:
+  IMS_PER_BATCH: 4
+  STEPS: (1301157, 1419444) #88%,96%
+  MAX_ITER: 1478587 # 50 epochs (118287 * 50 / 4)
+OUTPUT_DIR: mvit2_50ep_thawed
+INPUT:
+  IMAGE_SIZE: 384
+  MIN_SIZE_TEST: 384
+  MAX_SIZE_TEST: 384
+TEST:
+  EVAL_PERIOD: 10000

@@ -1,0 +1,7 @@
+_BASE_: maskformer2_R50_bs1_300ep.yaml
+MODEL:
+  WEIGHTS: "weightfolder://model_final_b807bd.pkl" # From COCO R101 NOTE: file is corrupted, not actually R101 COCO
+  RESNETS:
+    DEPTH: 101
+
+OUTPUT_DIR: maskformer2_R101_VIPER_300ep
