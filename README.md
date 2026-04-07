@@ -11,7 +11,7 @@ See [installation instructions](INSTALL.md).
 
 - Where possible, we used models provided in the [original Model Zoo from Facebook](https://github.com/facebookresearch/Mask2Former/blob/main/MODEL_ZOO.md). 
 - In some cases, when training a model we swapped out the backbone but kept the Mask2Former head for transfer learning. Those models are suffixed with `backbone_stripped` e.g `model_final_54b88a_backbone_stripped.pkl`. In those cases, the original model (e.g. `model_final_54b88a.pkl`) can be found from the Facebook Model Zoo and the `strip-backbone-weights.py` script in `tools/` can be used to generate the weights file we used. 
-- All models trained by us are available on [HuggingFace](https://huggingface.co/buckets/michaelsmith6/U-SEG-Models).
+- All models trained by us are available on [HuggingFace](https://huggingface.co/buckets/michaelsmith6/U-SEG-Models) and [mirrored at McGill University](https://library.cim.mcgill.ca/data/models/U-SEG/).
 
 ## Datasets
 See [the README](datasets/README.md).
