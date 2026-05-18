@@ -1,6 +1,6 @@
 # U-SEG: Uncertainty in SEGmentation - A systematic multi-variable exploration
 
-This repository contains the code for the U-SEG paper (CVPR Findings 2026) by Michael Smith and Frank Ferrie. It is based on the [Mask2Former project from Facebook](https://github.com/facebookresearch/mask2former). Thus, there is a lot of inherited code not used in this project.
+This repository contains the code for the [U-SEG paper (CVPR Findings 2026) by Michael Smith and Frank Ferrie](https://arxiv.org/abs/2605.15421). It is based on the [Mask2Former project from Facebook](https://github.com/facebookresearch/mask2former). Thus, there is a lot of inherited code not used in this project.
 
 
 ## Installation
