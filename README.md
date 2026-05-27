@@ -71,12 +71,13 @@ We also provide CSV versions of the DataFrames created in the notebooks; these c
 If you make use of any code, data or results, please cite as follows:
 
 ```BibTeX
-@InProceedings{Smith_2026_CVPRF,
-    author    = {Smith, Michael and Ferrie, Frank},
+@InProceedings{Smith_2026_CVPR,
+    author    = {Smith, Michael and Ferrie, Frank P.},
     title     = {U-SEG: Uncertainty in SEGmentation - A systematic multi-variable exploration},
     booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Findings},
     month     = {June},
-    year      = {2026}
+    year      = {2026},
+    pages     = {1850-1861}
 }
 ```
 You may also want to [cite the original Mask2Former paper](https://github.com/facebookresearch/mask2former) if appropriate.
